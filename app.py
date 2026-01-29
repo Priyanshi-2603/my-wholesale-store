@@ -60,9 +60,10 @@ if cart:
     st.sidebar.subheader(f"Total: ₹{total_bill}")
     
     # Apna Number yahan change karein
-    my_number = "919876543210" 
+    my_number = "917417866405" 
     wa_link = f"https://wa.me/{my_number}?text={order_text}%0ATotal Amount: ₹{total_bill}"
     
     st.sidebar.markdown(f'<a href="{wa_link}" target="_blank"><button style="background-color: #25D366; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%;">Order on WhatsApp</button></a>', unsafe_allow_html=True)
 else:
     st.sidebar.info("Cart is empty. Select products to order.")
+
