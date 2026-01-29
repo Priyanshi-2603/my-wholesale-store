@@ -52,6 +52,7 @@ if cart:
     whatsapp_link = f"https://wa.me/{phone_number}?text={order_details}%0ATotal Amount: ₹{grand_total}"
     
     if st.sidebar.button("✅ Place Order on WhatsApp"):
-        st.sidebar.markdown(f'<a href="{whatsapp_link}" target="_blank">Click here to Confirm Order</a>', unsafe_allow_items=True)
+        st.sidebar.markdown(f'<a href="{whatsapp_link}" target="_blank">✅ Click here to Confirm Order</a>', unsafe_allow_html=True)
 else:
     st.sidebar.write("Your cart is empty.")
+
