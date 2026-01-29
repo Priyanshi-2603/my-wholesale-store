@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Page Configuration
-st.set_page_config(page_title="Vrindavan Wholesale Store", page_icon="🙏", layout="wide")
+st.set_page_config(page_title="Shri Girraj Mukut Shringar Kendra", page_icon="🙏", layout="wide")
 
 # 1. Product Database (Categories ke saath)
 # Aap yahan apne products add kar sakte hain
@@ -66,4 +66,5 @@ if cart:
     st.sidebar.markdown(f'<a href="{wa_link}" target="_blank"><button style="background-color: #25D366; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%;">Order on WhatsApp</button></a>', unsafe_allow_html=True)
 else:
     st.sidebar.info("Cart is empty. Select products to order.")
+
 
