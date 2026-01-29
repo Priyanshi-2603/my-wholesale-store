@@ -1,58 +1,68 @@
 import streamlit as st
 
 # Page Configuration
-st.set_page_config(page_title="My Wholesale Store", page_icon="📦")
+st.set_page_config(page_title="Vrindavan Wholesale Store", page_icon="🙏", layout="wide")
 
-# 1. Product Data (Aap yahan apne products dalein)
+# 1. Product Database (Categories ke saath)
+# Aap yahan apne products add kar sakte hain
 products = [
-    {"name": "Cotton T-Shirts", "price": 150, "moq": 50, "image": "👕"},
-    {"name": "Denim Jeans", "price": 450, "moq": 20, "image": "👖"},
-    {"name": "Running Shoes", "price": 800, "moq": 10, "image": "👟"},
+    {"category": "Poshak", "name": "Designer Kanha Poshak", "price": 120, "moq": 10, "img": "👗"},
+    {"category": "Poshak", "name": "Simple Cotton Poshak", "price": 50, "moq": 50, "img": "👗"},
+    {"category": "Mukut", "name": "Zardozi Mukut", "price": 80, "moq": 20, "img": "👑"},
+    {"category": "Mukut", "name": "Stone Work Mukut", "price": 150, "moq": 10, "img": "👑"},
+    {"category": "Lehanga Patka", "name": "Radha Rani Lehanga Set", "price": 500, "moq": 5, "img": "💃"},
+    {"category": "Mala", "name": "Moti Mala Set", "price": 30, "moq": 100, "img": "📿"},
+    {"category": "Mala", "name": "Tulsi Mala special", "price": 20, "moq": 200, "img": "📿"},
 ]
 
-st.title("🚀 Wholesale Digital Catalog")
-st.write("Welcome! Select products and place your order directly via WhatsApp.")
+# 2. Sidebar Navigation (Categories)
+st.sidebar.title("📁 Categories")
+category_list = ["All", "Poshak", "Mukut", "Lehanga Patka", "Mala"]
+selected_category = st.sidebar.radio("Go to:", category_list)
 
-# 2. Sidebar for Cart
-st.sidebar.header("🛒 Your Cart")
+# 3. Main Header
+st.title(f"📦 {selected_category} Collection")
+st.write(f"Showing best wholesale rates for {selected_category}")
+
+# 4. Filter Products based on Category
+if selected_category == "All":
+    display_products = products
+else:
+    display_products = [p for p in products if p["category"] == selected_category]
+
+# 5. Display Products in Grid
 cart = {}
-
-# 3. Main Catalog UI
-for p in products:
+for p in display_products:
     with st.container():
-        col1, col2, col3 = st.columns([1, 2, 1])
+        col1, col2, col3 = st.columns([1, 3, 1])
         with col1:
-            st.title(p["image"])
+            st.title(p["img"])
         with col2:
             st.subheader(p["name"])
-            st.write(f"Price: ₹{p['price']} / pc")
-            st.caption(f"Minimum Order: {p['moq']} pcs")
+            st.write(f"Wholesale Price: ₹{p['price']}")
+            st.caption(f"Minimum Order (MOQ): {p['moq']} units")
         with col3:
-            qty = st.number_input(f"Qty for {p['name']}", min_value=0, step=p['moq'], key=p['name'])
+            qty = st.number_input(f"Qty", min_value=0, step=p['moq'], key=p['name'])
             if qty > 0:
-                cart[p['name']] = {"qty": qty, "total": qty * p['price']}
+                cart[p['name']] = {"qty": qty, "price": p['price']}
+    st.divider()
 
-st.divider()
-
-# 4. Checkout System
+# 6. Sidebar Cart & WhatsApp Integration
+st.sidebar.header("🛒 Your Order")
 if cart:
-    st.sidebar.write("---")
-    grand_total = 0
-    order_details = "Order Details:%0A"
+    total_bill = 0
+    order_text = "Naye Order ki Details:%0A"
+    for item, info in cart.items():
+        st.sidebar.write(f"**{item}** x {info['qty']}")
+        total_bill += info['qty'] * info['price']
+        order_text += f"- {item}: {info['qty']} pcs%0A"
     
-    for item, data in cart.items():
-        st.sidebar.write(f"**{item}**: {data['qty']} pcs")
-        grand_total += data['total']
-        order_details += f"- {item}: {data['qty']} pcs%0A"
+    st.sidebar.subheader(f"Total: ₹{total_bill}")
     
-    st.sidebar.subheader(f"Total: ₹{grand_total}")
+    # Apna Number yahan change karein
+    my_number = "919876543210" 
+    wa_link = f"https://wa.me/{my_number}?text={order_text}%0ATotal Amount: ₹{total_bill}"
     
-    # WhatsApp Link Generation
-    phone_number = "917417866405" # <-- APNA NUMBER YAHAN DALAIN
-    whatsapp_link = f"https://wa.me/{phone_number}?text={order_details}%0ATotal Amount: ₹{grand_total}"
-    
-    if st.sidebar.button("✅ Place Order on WhatsApp"):
-        st.sidebar.markdown(f'<a href="{whatsapp_link}" target="_blank">✅ Click here to Confirm Order</a>', unsafe_allow_html=True)
+    st.sidebar.markdown(f'<a href="{wa_link}" target="_blank"><button style="background-color: #25D366; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%;">Order on WhatsApp</button></a>', unsafe_allow_html=True)
 else:
-    st.sidebar.write("Your cart is empty.")
-
+    st.sidebar.info("Cart is empty. Select products to order.")
