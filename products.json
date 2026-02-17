@@ -355,6 +355,22 @@
       { "id": "kb6", "name": "Kamarband 6", "image": "KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.47_754f6607.jpg", "description": "Kamarband" }
     ]
   },
+  "MUKUT": {
+    "MUKUT": [
+      { "id": "mu1", "name": "Mukut 1", "image": "MUKUT/WhatsApp Image 2025-10-31 at 21.04.05_5bcacda8.jpg" },
+      { "id": "mu2", "name": "Mukut 2", "image": "MUKUT/WhatsApp Image 2025-11-02 at 18.53.00_5ef70741.jpg" },
+      { "id": "mu3", "name": "Mukut 3", "image": "MUKUT/WhatsApp Image 2025-11-02 at 19.48.41_8b99e544.jpg" },
+      { "id": "mu4", "name": "Mukut 4", "image": "MUKUT/WhatsApp Image 2025-11-02 at 21.08.32_97732b6e.jpg" },
+      { "id": "mu5", "name": "Mukut 5", "image": "MUKUT/WhatsApp Image 2025-11-02 at 21.28.03_27fe0827.jpg" },
+      { "id": "mu6", "name": "Mukut 6", "image": "MUKUT/WhatsApp Image 2025-11-03 at 09.37.07_71e031bf.jpg" },
+      { "id": "mu7", "name": "Mukut 7", "image": "MUKUT/WhatsApp Image 2025-11-03 at 12.09.17_7f6fcda5.jpg" },
+      { "id": "mu8", "name": "Mukut 8", "image": "MUKUT/WhatsApp Image 2025-11-03 at 14.00.31_86c1aecc.jpg" },
+      { "id": "mu9", "name": "Mukut 9", "image": "MUKUT/WhatsApp Image 2025-11-04 at 14.38.37_ad9fac0f.jpg" },
+      { "id": "mu10", "name": "Mukut 10", "image": "MUKUT/WhatsApp Image 2025-11-04 at 14.39.42_56f160ef.jpg" },
+      { "id": "mu11", "name": "Mukut 11", "image": "MUKUT/WhatsApp Image 2025-11-05 at 15.29.52_53141a98.jpg" },
+      { "id": "mu12", "name": "Mukut 12", "image": "MUKUT/WhatsApp Image 2025-12-29 at 23.15.57.jpeg" }
+    ]
+  },
   "lehanga_patka": {
     "lehanga_set": [
       {
