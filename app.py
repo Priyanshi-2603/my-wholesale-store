@@ -57,27 +57,8 @@ st.markdown(
         unsafe_allow_html=True,
 )
 
-# --- Horizontal pill selector for categories ---
-categories = list(data.keys())
-col_cat, col_space = st.columns([0.8, 0.2])
-with col_cat:
-    st.markdown("**Select Category:**")
-    category_row = st.columns(len(categories))
-    
-    # Initialize session state for selected category
-    if "selected_category" not in st.session_state:
-        st.session_state.selected_category = categories[0]
-    
-    # Render pill buttons
-    for idx, cat in enumerate(categories):
-        with category_row[idx]:
-            is_selected = st.session_state.selected_category == cat
-            button_style = "background-color: #4a7c8c; color: white; border-radius: 20px; padding: 8px 16px; font-weight: bold;" if is_selected else "background-color: #e8e8e8; color: #333; border-radius: 20px; padding: 8px 16px;"
-            if st.button(cat.upper(), use_container_width=True, key=f"cat_{cat}"):
-                st.session_state.selected_category = cat
-                st.rerun()
-    
-    category = st.session_state.selected_category
+# Top-level Category (visible on mobile) - dropdown selector at top
+category = st.selectbox("Select Category", list(data.keys()))
 
 # Subcategory select (also at top) — includes "All"
 subcategory_list = list(data[category].keys())
@@ -117,22 +98,17 @@ for sub_name, products in products_by_sub.items():
             img_rel = p.get("image", "")
             img_path = os.path.join("images", img_rel)
             if os.path.exists(img_path):
-                # render a small HTML card so we can style background and image
-                card = f"""
-                <div class="product-card">
-                  <h3>{p.get('name','Unnamed')}</h3>
-                  <img src="{os.path.join('images', img_rel)}" class="product-img"/>
-                </div>
-                """
-                st.markdown(card, unsafe_allow_html=True)
+                st.markdown(f"<div class='product-card'><h3>{p.get('name','Unnamed')}</h3></div>", unsafe_allow_html=True)
+                st.image(img_path, use_column_width=True)
             else:
                 st.markdown(f"### {p.get('name','Unnamed')}")
                 st.warning("Image not found. Add it in images/ folder.")
+            
             # descriptions were removed from the JSON; leave placeholder if needed
             desc = p.get("description", "")
             if desc:
                 st.write(desc)
             st.markdown("---")
-
+        
         idx += 1
 
