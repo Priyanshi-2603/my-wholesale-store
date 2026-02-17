@@ -14,10 +14,16 @@ st.write("Select category → subcategory → product")
 # Sidebar Category
 category = st.sidebar.selectbox("Select Category", list(data.keys()))
 
+# Subcategory select should allow showing ALL subcategories when chosen
 subcategory_list = list(data[category].keys())
-subcategory = st.sidebar.selectbox("Select Subcategory", subcategory_list)
+subcategory_options = ["All"] + subcategory_list
+subcategory = st.sidebar.selectbox("Select Subcategory", subcategory_options)
 
-products = data[category][subcategory]
+if subcategory == "All":
+    # Aggregate products from all subcategories for the chosen category
+    products_by_sub = {k: v for k, v in data[category].items()}
+else:
+    products_by_sub = {subcategory: data[category].get(subcategory, [])}
 
 st.subheader(f"📌 Category: {category.upper()}  |  Subcategory: {subcategory.replace('_',' ').upper()}")
 st.write("---")
@@ -26,24 +32,30 @@ st.write("---")
 search = st.text_input("🔍 Search Product Name")
 
 filtered_products = []
-for p in products:
-    if search.lower() in p["name"].lower():
-        filtered_products.append(p)
 
-# Show Products
+# When showing "All", iterate each subcategory and display its products
 cols = st.columns(3)
+idx = 0
+for sub_name, products in products_by_sub.items():
+    # Optional small header for each subcategory when showing all
+    if subcategory == "All":
+        st.markdown(f"**{sub_name.replace('_',' ').title()}**")
 
-for i, product in enumerate(filtered_products):
-    with cols[i % 3]:
-        st.markdown(f"### {product['name']}")
-       # st.markdown(f"**Price:** {product['price']}")
+    for p in products:
+        if search and search.strip() != "":
+            if search.lower() not in p.get("name", "").lower():
+                continue
 
-        img_path = os.path.join("images", product["image"])
-        if os.path.exists(img_path):
-            st.image(img_path, use_container_width=True)
-        else:
-            st.warning("Image not found. Add it in images/ folder.")
+        with cols[idx % 3]:
+            st.markdown(f"### {p.get('name','Unnamed')}")
+            img_path = os.path.join("images", p.get("image", ""))
+            if os.path.exists(img_path):
+                st.image(img_path, width='stretch')
+            else:
+                st.warning("Image not found. Add it in images/ folder.")
 
-        st.write(product["description"])
-        st.markdown("---")
+            st.write(p.get("description", ""))
+            st.markdown("---")
+
+        idx += 1
 
