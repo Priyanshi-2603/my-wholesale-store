@@ -3,17 +3,80 @@
     "laddu_gopal_poshak": [
       {
         "id": "p1",
-        "name": "Red Heavy Poshak",
-        "price": "₹250",
-        "image": "poshak1.jpg",
-        "description": "Premium printed poshak with foil work."
+        "name": "Poshak Design 1",
+        "price": "₹0",
+        "image": "images/poshak1.jpg",
+        "description": "Laddu Gopal Poshak"
       },
       {
         "id": "p2",
-        "name": "Yellow Designer Poshak",
-        "price": "₹300",
+        "name": "Poshak Design 2",
+        "price": "₹0",
         "image": "poshak2.jpg",
-        "description": "Beautiful poshak for Laddu Gopal."
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p3",
+        "name": "Poshak Design 3",
+        "price": "₹0",
+        "image": "poshak3.jpg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p4",
+        "name": "Poshak Design 4",
+        "price": "₹0",
+        "image": "poshak4.jpg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p5",
+        "name": "Poshak Design 5",
+        "price": "₹0",
+        "image": "poshak5.jpg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p6",
+        "name": "Poshak Design 6",
+        "price": "₹0",
+        "image": "poshak6.jpg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p7",
+        "name": "Poshak Design 7",
+        "price": "₹0",
+        "image": "poshak7.jpg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p8",
+        "name": "Poshak Design 8",
+        "price": "₹0",
+        "image": "poshak8.jpg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p9",
+        "name": "Poshak Design 9",
+        "price": "₹0",
+        "image": "poshak9.jpg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p10",
+        "name": "Poshak Design 10",
+        "price": "₹0",
+        "image": "poshak10.jpg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p11",
+        "name": "Poshak Design 11",
+        "price": "₹0",
+        "image": "poshak11.jpg",
+        "description": "Laddu Gopal Poshak"
       }
     ]
   },
