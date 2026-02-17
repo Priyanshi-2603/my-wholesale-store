@@ -194,22 +194,166 @@
     ]
   },
   "baal": {
-    "baal": []
+    "baal": [
+      {
+        "id": "ba1",
+        "name": "Baal 1",
+        "image": "baal/WhatsApp Image 2025-07-11 at 15.24.57.jpeg",
+        "description": "Baal"
+      },
+      {
+        "id": "ba2",
+        "name": "Baal 2",
+        "image": "baal/WhatsApp Image 2025-11-03 at 13.01.20_02798ada.jpg",
+        "description": "Baal"
+      },
+      {
+        "id": "ba3",
+        "name": "Baal 3",
+        "image": "baal/WhatsApp Image 2026-01-11 at 18.58.30.jpeg",
+        "description": "Baal"
+      },
+      {
+        "id": "ba4",
+        "name": "Chavarbal",
+        "image": "baal/chavarbal.jpeg",
+        "description": "Baal"
+      },
+      {
+        "id": "ba5",
+        "name": "Choti Bal",
+        "image": "baal/choti bal.jpeg",
+        "description": "Baal"
+      },
+      {
+        "id": "ba6",
+        "name": "Khule Baal",
+        "image": "baal/khule baal.jpeg",
+        "description": "Baal"
+      },
+      {
+        "id": "ba7",
+        "name": "Radha Rani Curly",
+        "image": "baal/radha rani curly.jpeg",
+        "description": "Baal"
+      }
+    ]
   },
   "kundan_mala": {
-    "kundan_mala": []
+    "kundan_mala": [
+      { "id": "km1", "name": "Kundan Mala 1", "image": "kundan_mala/1.jpeg", "description": "Kundan mala" },
+      { "id": "km2", "name": "Kundan Mala 2", "image": "kundan_mala/2.jpeg", "description": "Kundan mala" },
+      { "id": "km3", "name": "Kundan Mala 3", "image": "kundan_mala/3.jpeg", "description": "Kundan mala" },
+      { "id": "km4", "name": "Kundan Mala 4", "image": "kundan_mala/4.jpeg", "description": "Kundan mala" },
+      { "id": "km5", "name": "Kundan Mala 6", "image": "kundan_mala/6.jpeg", "description": "Kundan mala" },
+      { "id": "km6", "name": "Kundan Mala 8", "image": "kundan_mala/8.jpeg", "description": "Kundan mala" },
+      { "id": "km7", "name": "Kundan Mala 9", "image": "kundan_mala/9.jpeg", "description": "Kundan mala" },
+      { "id": "km8", "name": "Kundan Mala 10", "image": "kundan_mala/10.jpeg", "description": "Kundan mala" },
+      { "id": "km9", "name": "Kundan Mala 15", "image": "kundan_mala/15.jpeg", "description": "Kundan mala" },
+      { "id": "km10", "name": "Kundan Mala 16", "image": "kundan_mala/16.jpeg", "description": "Kundan mala" },
+      { "id": "km11", "name": "Kundan Mala 17", "image": "kundan_mala/17.jpeg", "description": "Kundan mala" },
+      { "id": "km12", "name": "Kundan Mala 18", "image": "kundan_mala/18.jpeg", "description": "Kundan mala" },
+      { "id": "km13", "name": "Kundan Mala 19", "image": "kundan_mala/19.jpeg", "description": "Kundan mala" },
+      { "id": "km14", "name": "Kundan Mala A", "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.49 (1).jpeg", "description": "Kundan mala" },
+      { "id": "km15", "name": "Kundan Mala B", "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.49 (2).jpeg", "description": "Kundan mala" },
+      { "id": "km16", "name": "Kundan Mala C", "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50 (1).jpeg", "description": "Kundan mala" },
+      { "id": "km17", "name": "Kundan Mala D", "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50 (2).jpeg", "description": "Kundan mala" },
+      { "id": "km18", "name": "Kundan Mala E", "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50.jpeg", "description": "Kundan mala" },
+      { "id": "km19", "name": "Kundan Mala F", "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51 (1).jpeg", "description": "Kundan mala" },
+      { "id": "km20", "name": "Kundan Mala G", "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51 (2).jpeg", "description": "Kundan mala" },
+      { "id": "km21", "name": "Kundan Mala H", "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51.jpeg", "description": "Kundan mala" },
+      { "id": "km22", "name": "Kundan Mala I", "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.52 (1).jpeg", "description": "Kundan mala" },
+      { "id": "km23", "name": "Kundan Mala J", "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.52.jpeg", "description": "Kundan mala" },
+      { "id": "km24", "name": "Kundan Mala New", "image": "kundan_mala/WhatsApp Image 2026-01-11 at 19.02.53.jpeg", "description": "Kundan mala" }
+    ]
   },
   "jhula": {
-    "jhula": []
+    "jhula": [
+      {
+        "id": "j1",
+        "name": "Jhula 1",
+        "image": "jhula/WhatsApp Image 2025-07-11 at 14.29.58.jpeg",
+        "description": "Jhula"
+      }
+    ]
   },
   "mala": {
-    "mala": []
+    "mala": [
+      { "id": "ma1", "name": "Mala 1", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.39 (1).jpeg", "description": "Mala" },
+      { "id": "ma2", "name": "Mala 2", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.39 (2).jpeg", "description": "Mala" },
+      { "id": "ma3", "name": "Mala 3", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.39 (3).jpeg", "description": "Mala" },
+      { "id": "ma4", "name": "Mala 4", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.39 (4).jpeg", "description": "Mala" },
+      { "id": "ma5", "name": "Mala 5", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.39 (5).jpeg", "description": "Mala" },
+      { "id": "ma6", "name": "Mala 6", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.39 (6).jpeg", "description": "Mala" },
+      { "id": "ma7", "name": "Mala 7", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.39.jpeg", "description": "Mala" },
+      { "id": "ma8", "name": "Mala 8", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (1).jpeg", "description": "Mala" },
+      { "id": "ma9", "name": "Mala 9", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (10).jpeg", "description": "Mala" },
+      { "id": "ma10", "name": "Mala 10", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (11).jpeg", "description": "Mala" },
+      { "id": "ma11", "name": "Mala 11", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (12).jpeg", "description": "Mala" },
+      { "id": "ma12", "name": "Mala 12", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (13).jpeg", "description": "Mala" },
+      { "id": "ma13", "name": "Mala 13", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (14).jpeg", "description": "Mala" },
+      { "id": "ma14", "name": "Mala 14", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (15) (1).jpeg", "description": "Mala" },
+      { "id": "ma15", "name": "Mala 15", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (2).jpeg", "description": "Mala" },
+      { "id": "ma16", "name": "Mala 16", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (3).jpeg", "description": "Mala" },
+      { "id": "ma17", "name": "Mala 17", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (4).jpeg", "description": "Mala" },
+      { "id": "ma18", "name": "Mala 18", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (5).jpeg", "description": "Mala" },
+      { "id": "ma19", "name": "Mala 19", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (6).jpeg", "description": "Mala" },
+      { "id": "ma20", "name": "Mala 20", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (7).jpeg", "description": "Mala" },
+      { "id": "ma21", "name": "Mala 21", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (8).jpeg", "description": "Mala" },
+      { "id": "ma22", "name": "Mala 22", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40 (9).jpeg", "description": "Mala" },
+      { "id": "ma23", "name": "Mala 23", "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.40.jpeg", "description": "Mala" },
+      { "id": "ma24", "name": "Mala 24", "image": "Mala/WhatsApp Image 2025-07-10 at 18.30.10.jpeg", "description": "Mala" },
+      { "id": "ma25", "name": "Mala 25", "image": "Mala/WhatsApp Image 2025-07-10 at 18.30.11 (1).jpeg", "description": "Mala" },
+      { "id": "ma26", "name": "Mala 26", "image": "Mala/WhatsApp Image 2025-07-10 at 18.30.11 (2).jpeg", "description": "Mala" },
+      { "id": "ma27", "name": "Mala 27", "image": "Mala/WhatsApp Image 2025-07-10 at 18.30.11.jpeg", "description": "Mala" },
+      { "id": "ma28", "name": "Mala 28", "image": "Mala/WhatsApp Image 2025-07-10 at 18.30.12 (1).jpeg", "description": "Mala" },
+      { "id": "ma29", "name": "Mala 29", "image": "Mala/WhatsApp Image 2025-07-10 at 18.30.12 (2).jpeg", "description": "Mala" },
+      { "id": "ma30", "name": "Mala 30", "image": "Mala/WhatsApp Image 2025-07-10 at 18.30.12.jpeg", "description": "Mala" },
+      { "id": "ma31", "name": "Mala 31", "image": "Mala/WhatsApp Image 2025-07-10 at 18.30.13 (1).jpeg", "description": "Mala" },
+      { "id": "ma32", "name": "Mala 32", "image": "Mala/WhatsApp Image 2025-07-10 at 18.30.13 (2).jpeg", "description": "Mala" },
+      { "id": "ma33", "name": "Mala 33", "image": "Mala/WhatsApp Image 2025-07-10 at 18.30.13.jpeg", "description": "Mala" },
+      { "id": "ma34", "name": "Mala 34", "image": "Mala/WhatsApp Image 2025-07-10 at 18.41.04 (1).jpeg", "description": "Mala" },
+      { "id": "ma35", "name": "Mala 35", "image": "Mala/WhatsApp Image 2025-07-10 at 18.41.04.jpeg", "description": "Mala" },
+      { "id": "ma36", "name": "Mala 36", "image": "Mala/WhatsApp Image 2025-07-10 at 18.41.05 (1).jpeg", "description": "Mala" },
+      { "id": "ma37", "name": "Mala 37", "image": "Mala/WhatsApp Image 2025-07-10 at 18.41.05 (2).jpeg", "description": "Mala" },
+      { "id": "ma38", "name": "Mala 38", "image": "Mala/WhatsApp Image 2025-07-10 at 18.41.05.jpeg", "description": "Mala" },
+      { "id": "ma39", "name": "Mala 39", "image": "Mala/WhatsApp Image 2025-07-10 at 18.41.06 (1).jpeg", "description": "Mala" },
+      { "id": "ma40", "name": "Mala 40", "image": "Mala/WhatsApp Image 2025-07-10 at 18.41.06 (2).jpeg", "description": "Mala" },
+      { "id": "ma41", "name": "Mala 41", "image": "Mala/WhatsApp Image 2025-07-10 at 18.41.06.jpeg", "description": "Mala" },
+      { "id": "ma42", "name": "Mala 42", "image": "Mala/WhatsApp Image 2025-07-10 at 18.41.07 (1).jpeg", "description": "Mala" },
+      { "id": "ma43", "name": "Mala 43", "image": "Mala/WhatsApp Image 2025-07-10 at 18.41.07.jpeg", "description": "Mala" },
+      { "id": "ma44", "name": "Mala 44", "image": "Mala/WhatsApp Image 2025-07-10 at 18.41.08 (1).jpeg", "description": "Mala" },
+      { "id": "ma45", "name": "Mala 45", "image": "Mala/WhatsApp Image 2025-07-10 at 18.41.08.jpeg", "description": "Mala" },
+      { "id": "ma46", "name": "Mala 46", "image": "Mala/WhatsApp Image 2025-07-10 at 18.55.17 (1).jpeg", "description": "Mala" },
+      { "id": "ma47", "name": "Mala 47", "image": "Mala/WhatsApp Image 2025-07-10 at 18.55.17.jpeg", "description": "Mala" },
+      { "id": "ma48", "name": "Mala 48", "image": "Mala/WhatsApp Image 2025-07-11 at 13.30.38.jpeg", "description": "Mala" },
+      { "id": "ma49", "name": "Mala 49", "image": "Mala/WhatsApp Image 2025-07-11 at 13.30.39.jpeg", "description": "Mala" },
+      { "id": "ma50", "name": "Mala 50", "image": "Mala/image1.jpeg", "description": "Mala" }
+    ]
   },
   "kada": {
-    "kada": []
+    "kada": [
+      { "id": "ka1", "name": "Kada 1", "image": "Kada/WhatsApp Image 2025-07-10 at 19.01.37 (1).jpeg", "description": "Kada" },
+      { "id": "ka2", "name": "Kada 2", "image": "Kada/WhatsApp Image 2025-07-10 at 19.01.37 (2).jpeg", "description": "Kada" },
+      { "id": "ka3", "name": "Kada 3", "image": "Kada/WhatsApp Image 2025-07-10 at 19.01.37.jpeg", "description": "Kada" },
+      { "id": "ka4", "name": "Kada 4", "image": "Kada/WhatsApp Image 2025-07-10 at 19.01.38 (1).jpeg", "description": "Kada" },
+      { "id": "ka5", "name": "Kada 5", "image": "Kada/WhatsApp Image 2025-07-10 at 19.01.38.jpeg", "description": "Kada" },
+      { "id": "ka6", "name": "Kada 6", "image": "Kada/WhatsApp Image 2025-07-11 at 14.49.09 (1).jpeg", "description": "Kada" },
+      { "id": "ka7", "name": "Kada 7", "image": "Kada/WhatsApp Image 2025-07-11 at 14.49.09 (2).jpeg", "description": "Kada" },
+      { "id": "ka8", "name": "Kada 8", "image": "Kada/WhatsApp Image 2025-07-11 at 14.49.10 (1).jpeg", "description": "Kada" },
+      { "id": "ka9", "name": "Kada 9", "image": "Kada/WhatsApp Image 2025-07-11 at 14.49.10.jpeg", "description": "Kada" },
+      { "id": "ka10", "name": "Kada 10", "image": "Kada/WhatsApp Image 2025-07-11 at 14.49.11.jpeg", "description": "Kada" }
+    ]
   },
   "kamarband": {
-    "kamarband": []
+    "kamarband": [
+      { "id": "kb1", "name": "Kamarband 1", "image": "KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.45_5d64b8cf.jpg", "description": "Kamarband" },
+      { "id": "kb2", "name": "Kamarband 2", "image": "KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.46_1ebbf8f9.jpg", "description": "Kamarband" },
+      { "id": "kb3", "name": "Kamarband 3", "image": "KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.46_5259b8fc.jpg", "description": "Kamarband" },
+      { "id": "kb4", "name": "Kamarband 4", "image": "KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.46_69930e86.jpg", "description": "Kamarband" },
+      { "id": "kb5", "name": "Kamarband 5", "image": "KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.47_6929d87f.jpg", "description": "Kamarband" },
+      { "id": "kb6", "name": "Kamarband 6", "image": "KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.47_754f6607.jpg", "description": "Kamarband" }
+    ]
   },
   "mukut": {
     "stone_mukut": [
