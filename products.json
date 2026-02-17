@@ -86,13 +86,6 @@
     ]
   },
   "bansi": {
-    "wooden_bansi": [
-      {
-        "id": "b1",
-        "name": "Wooden Bansi Small",
-        "image": "bansi1.jpeg"
-      }
-    ],
     "stone_bansi": [
       {
         "id": "b2",
@@ -736,15 +729,6 @@
         "id": "mu12",
         "name": "Mukut 12",
         "image": "MUKUT/WhatsApp Image 2025-12-29 at 23.15.57.jpeg"
-      }
-    ]
-  },
-  "lehanga_patka": {
-    "lehanga_set": [
-      {
-        "id": "l1",
-        "name": "Lehanga Patka Set",
-        "image": "lehanga1.jpeg"
       }
     ]
   }
