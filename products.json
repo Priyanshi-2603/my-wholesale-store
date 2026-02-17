@@ -355,17 +355,6 @@
       { "id": "kb6", "name": "Kamarband 6", "image": "KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.47_754f6607.jpg", "description": "Kamarband" }
     ]
   },
-  "mukut": {
-    "stone_mukut": [
-      {
-        "id": "m1",
-        "name": "Golden Stone Mukut",
-        "price": "₹400",
-        "image": "mukut1.jpeg",
-        "description": "Stone mukut premium quality."
-      }
-    ]
-  },
   "lehanga_patka": {
     "lehanga_set": [
       {
