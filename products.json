@@ -5,7 +5,7 @@
         "id": "p1",
         "name": "Poshak Design 1",
         "price": "₹0",
-        "image": "images/poshak1.jpeg",
+        "image": "poshak1.jpeg",
         "description": "Laddu Gopal Poshak"
       },
       {
@@ -19,63 +19,63 @@
         "id": "p3",
         "name": "Poshak Design 3",
         "price": "₹0",
-        "image": "poshak3.jpg",
+        "image": "poshak3.jpeg",
         "description": "Laddu Gopal Poshak"
       },
       {
         "id": "p4",
         "name": "Poshak Design 4",
         "price": "₹0",
-        "image": "poshak4.jpg",
+        "image": "poshak4.jpeg",
         "description": "Laddu Gopal Poshak"
       },
       {
         "id": "p5",
         "name": "Poshak Design 5",
         "price": "₹0",
-        "image": "poshak5.jpg",
+        "image": "poshak5.jpeg",
         "description": "Laddu Gopal Poshak"
       },
       {
         "id": "p6",
         "name": "Poshak Design 6",
         "price": "₹0",
-        "image": "poshak6.jpg",
+        "image": "poshak6.jpeg",
         "description": "Laddu Gopal Poshak"
       },
       {
         "id": "p7",
         "name": "Poshak Design 7",
         "price": "₹0",
-        "image": "poshak7.jpg",
+        "image": "poshak7.jpeg",
         "description": "Laddu Gopal Poshak"
       },
       {
         "id": "p8",
         "name": "Poshak Design 8",
         "price": "₹0",
-        "image": "poshak8.jpg",
+        "image": "poshak8.jpeg",
         "description": "Laddu Gopal Poshak"
       },
       {
         "id": "p9",
         "name": "Poshak Design 9",
         "price": "₹0",
-        "image": "poshak9.jpg",
+        "image": "poshak9.jpeg",
         "description": "Laddu Gopal Poshak"
       },
       {
         "id": "p10",
         "name": "Poshak Design 10",
         "price": "₹0",
-        "image": "poshak10.jpg",
+        "image": "poshak10.jpeg",
         "description": "Laddu Gopal Poshak"
       },
       {
         "id": "p11",
         "name": "Poshak Design 11",
         "price": "₹0",
-        "image": "poshak11.jpg",
+        "image": "poshak11.jpeg",
         "description": "Laddu Gopal Poshak"
       }
     ]
@@ -86,7 +86,7 @@
         "id": "b1",
         "name": "Wooden Bansi Small",
         "price": "₹50",
-        "image": "bansi1.jpg",
+        "image": "bansi1.jpeg",
         "description": "Wooden bansi for deity."
       }
     ]
@@ -97,7 +97,7 @@
         "id": "m1",
         "name": "Golden Stone Mukut",
         "price": "₹400",
-        "image": "mukut1.jpg",
+        "image": "mukut1.jpeg",
         "description": "Stone mukut premium quality."
       }
     ]
@@ -108,7 +108,7 @@
         "id": "l1",
         "name": "Lehanga Patka Set",
         "price": "₹500",
-        "image": "lehanga1.jpg",
+        "image": "lehanga1.jpeg",
         "description": "Lehanga + Patka full set."
       }
     ]
