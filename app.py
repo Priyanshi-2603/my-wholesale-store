@@ -9,7 +9,10 @@ with open("products.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 st.title("🛍 Shri Girraj Mukut Shringar Kendra Product Catalogue")
-#st.write("Product Catalogue")
+
+# Add spacing below title
+st.write("")
+st.write("")
 
 # --- add simple CSS for background and cards ---
 st.markdown(
@@ -30,11 +33,12 @@ st.markdown(
             .product-card {
                 background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7));
                 border-radius: 12px;
-                padding: 10px 12px;
+                padding: 12px 14px;
                 box-shadow: 0 6px 18px rgba(10,10,20,0.06);
+                margin-top: 8px;
                 margin-bottom: 12px;
             }
-            .product-card h3 { color: #2b2b2b; margin: 6px 0 8px 0; font-size: 18px; }
+            .product-card h3 { color: #2b2b2b; margin: 8px 0 10px 0; font-size: 18px; font-weight: 600; }
             .product-img { width: 100%; height: auto; border-radius: 8px; display:block; margin-bottom:8px; }
             /* subtle header style */
             .stHeader, .css-1v3fvcr h1 { color: #1f3b6f }
