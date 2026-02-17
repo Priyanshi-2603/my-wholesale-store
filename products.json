@@ -5,19 +5,19 @@
         "id": "p1",
         "name": "Poshak Design 1",
         "image": "poshak1.jpeg",
-        "description": "Laddu Gopal Poshak"
+        "description": "Only available in NO.2 size"
       },
       {
         "id": "p2",
         "name": "Poshak Design 2",
         "image": "poshak2.jpeg",
-        "description": "Laddu Gopal Poshak"
+        "description": "Only available in NO.2 size"
       },
       {
         "id": "p3",
         "name": "Poshak Design 3",
         "image": "poshak3.jpeg",
-        "description": "Laddu Gopal Poshak"
+        "description": "Sizes available till No.4"
       },
       {
         "id": "p4",
