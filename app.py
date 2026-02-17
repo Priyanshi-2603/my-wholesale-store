@@ -8,13 +8,14 @@ st.set_page_config(page_title="Shri Girraj Mukut Shringar Kendra Mathura", layou
 with open("products.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
+st.write("")
 st.title("🛍 Shri Girraj Mukut Shringar Kendra Product Catalogue")
-
-# Add substantial spacing below title to prevent overlap
-st.write("")
-st.write("")
-st.write("")
-st.write("")
 
 # --- add simple CSS for background and cards ---
 st.markdown(
