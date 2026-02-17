@@ -2,14 +2,14 @@ import streamlit as st
 import json
 import os
 
-st.set_page_config(page_title="Business Catalogue", layout="wide")
+st.set_page_config(page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide")
 
 # Load product data
 with open("products.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
-st.title("🛍 Business Product Catalogue")
-st.write("Select category → subcategory → product")
+st.title("🛍 Shri Girraj Mukut Shringar Kendra Product Catalogue")
+#st.write("Product Catalogue")
 
 # Sidebar Category
 category = st.sidebar.selectbox("Select Category", list(data.keys()))
