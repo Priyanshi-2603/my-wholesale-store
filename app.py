@@ -11,13 +11,13 @@ with open("products.json", "r", encoding="utf-8") as f:
 st.title("🛍 Shri Girraj Mukut Shringar Kendra Product Catalogue")
 #st.write("Product Catalogue")
 
-# Sidebar Category
-category = st.sidebar.selectbox("Select Category", list(data.keys()))
+# Top-level Category (visible on mobile) - primary selector at top
+category = st.selectbox("Select Category", list(data.keys()))
 
-# Subcategory select should allow showing ALL subcategories when chosen
+# Subcategory select (also at top) — includes "All"
 subcategory_list = list(data[category].keys())
 subcategory_options = ["All"] + subcategory_list
-subcategory = st.sidebar.selectbox("Select Subcategory", subcategory_options)
+subcategory = st.selectbox("Select Subcategory", subcategory_options)
 
 if subcategory == "All":
     # Aggregate products from all subcategories for the chosen category
@@ -34,7 +34,8 @@ search = st.text_input("🔍 Search Product Name")
 filtered_products = []
 
 # When showing "All", iterate each subcategory and display its products
-cols = st.columns(3)
+# Use 2 columns for better mobile layout, Streamlit will stack on narrow screens
+cols = st.columns(2)
 idx = 0
 for sub_name, products in products_by_sub.items():
     # Optional small header for each subcategory when showing all
@@ -50,11 +51,14 @@ for sub_name, products in products_by_sub.items():
             st.markdown(f"### {p.get('name','Unnamed')}")
             img_path = os.path.join("images", p.get("image", ""))
             if os.path.exists(img_path):
-                st.image(img_path, width='stretch')
+                # Responsive image: use column width so it scales on mobile
+                st.image(img_path, use_column_width=True)
             else:
                 st.warning("Image not found. Add it in images/ folder.")
-
-            st.write(p.get("description", ""))
+            # descriptions were removed from the JSON; leave placeholder if needed
+            desc = p.get("description", "")
+            if desc:
+                st.write(desc)
             st.markdown("---")
 
         idx += 1
