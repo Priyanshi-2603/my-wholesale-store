@@ -67,6 +67,74 @@
         "image": "poshak11.jpeg",
         "description": "Laddu Gopal Poshak"
       }
+    ],
+    "3 pcs set fancy Poshak": [
+      {
+        "id": "p1",
+        "name": "Poshak Fancy Design 1",
+        "image": "images/3pc_set.jpeg",
+        "description": "Only available in NO.2 size"
+      },
+      {
+        "id": "p2",
+        "name": "Poshak Fancy Design 2",
+        "image": "poshak2.jpeg",
+        "description": "Only available in NO.2 size"
+      },
+      {
+        "id": "p3",
+        "name": "Poshak Fancy Design 3",
+        "image": "poshak3.jpeg",
+        "description": "Sizes available till No.4"
+      },
+      {
+        "id": "p4",
+        "name": "Poshak Fancy Design 4",
+        "image": "poshak4.jpeg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p5",
+        "name": "Poshak Fancy Design 5",
+        "image": "poshak5.jpeg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p6",
+        "name": "Poshak Fancy Design 6",
+        "image": "poshak6.jpeg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p7",
+        "name": "Poshak Fancy Design 7",
+        "image": "poshak7.jpeg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p8",
+        "name": "Poshak Fancy Design 8",
+        "image": "poshak8.jpeg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p9",
+        "name": "Poshak Fancy Design 9",
+        "image": "poshak9.jpeg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p10",
+        "name": "Poshak Fancy Design 10",
+        "image": "poshak10.jpeg",
+        "description": "Laddu Gopal Poshak"
+      },
+      {
+        "id": "p11",
+        "name": "Poshak Fancy Design 11",
+        "image": "poshak11.jpeg",
+        "description": "Laddu Gopal Poshak"
+      }
     ]
   },
   "bansi": {
