@@ -1,0 +1,53 @@
+{
+  "poshak": {
+    "laddu_gopal_poshak": [
+      {
+        "id": "p1",
+        "name": "Red Heavy Poshak",
+        "price": "₹250",
+        "image": "poshak1.jpg",
+        "description": "Premium printed poshak with foil work."
+      },
+      {
+        "id": "p2",
+        "name": "Yellow Designer Poshak",
+        "price": "₹300",
+        "image": "poshak2.jpg",
+        "description": "Beautiful poshak for Laddu Gopal."
+      }
+    ]
+  },
+  "bansi": {
+    "wooden_bansi": [
+      {
+        "id": "b1",
+        "name": "Wooden Bansi Small",
+        "price": "₹50",
+        "image": "bansi1.jpg",
+        "description": "Wooden bansi for deity."
+      }
+    ]
+  },
+  "mukut": {
+    "stone_mukut": [
+      {
+        "id": "m1",
+        "name": "Golden Stone Mukut",
+        "price": "₹400",
+        "image": "mukut1.jpg",
+        "description": "Stone mukut premium quality."
+      }
+    ]
+  },
+  "lehanga_patka": {
+    "lehanga_set": [
+      {
+        "id": "l1",
+        "name": "Lehanga Patka Set",
+        "price": "₹500",
+        "image": "lehanga1.jpg",
+        "description": "Lehanga + Patka full set."
+      }
+    ]
+  }
+}
