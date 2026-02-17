@@ -36,7 +36,7 @@ cols = st.columns(3)
 for i, product in enumerate(filtered_products):
     with cols[i % 3]:
         st.markdown(f"### {product['name']}")
-        st.markdown(f"**Price:** {product['price']}")
+       # st.markdown(f"**Price:** {product['price']}")
 
         img_path = os.path.join("images", product["image"])
         if os.path.exists(img_path):
@@ -46,3 +46,4 @@ for i, product in enumerate(filtered_products):
 
         st.write(product["description"])
         st.markdown("---")
+
