@@ -10,7 +10,9 @@ with open("products.json", "r", encoding="utf-8") as f:
 
 st.title("🛍 Shri Girraj Mukut Shringar Kendra Product Catalogue")
 
-# Add spacing below title
+# Add substantial spacing below title to prevent overlap
+st.write("")
+st.write("")
 st.write("")
 st.write("")
 
@@ -41,9 +43,9 @@ st.markdown(
             .product-card h3 { color: #2b2b2b; margin: 8px 0 10px 0; font-size: 18px; font-weight: 600; }
             .product-img { width: 100%; height: auto; border-radius: 8px; display:block; margin-bottom:8px; }
             /* subtle header style */
-            .stHeader, .css-1v3fvcr h1 { color: #1f3b6f }
+            .stHeader, .css-1v3fvcr h1 { color: #1f3b6f; margin-bottom: 3rem !important; }
             /* category pills (select) spacing on top */
-            .stSelectbox { margin-bottom: 6px }
+            .stSelectbox { margin-top: 2rem; margin-bottom: 1rem; }
             /* pill button styling */
             .stButton > button {
                 border-radius: 20px !important;
