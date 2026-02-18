@@ -88,13 +88,15 @@ filtered_products = []
 
 # When showing "All", iterate each subcategory and display its products
 # Use 2 columns for better mobile layout, Streamlit will stack on narrow screens
-cols = st.columns(2)
-n_cols = len(cols)
-idx = 0
 for sub_name, products in products_by_sub.items():
     # Optional small header for each subcategory when showing all
     if subcategory == "All":
         st.markdown(f"**{sub_name.replace('_',' ').title()}**")
+    
+    # Create fresh columns for each subcategory section
+    cols = st.columns(2)
+    n_cols = len(cols)
+    idx = 0
 
     for p in products:
         if search and search.strip() != "":
