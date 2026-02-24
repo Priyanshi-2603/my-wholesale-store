@@ -136,7 +136,7 @@
     ],
     "3 pcs set fancy Poshak": [
       {
-        "id": "p1",
+        "id": "p1_f",
         "name": "Poshak Fancy Design 1",
         "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/3pc_set/blue_set.jpeg",
         "prices": {
@@ -144,7 +144,7 @@
         }
       },
       {
-        "id": "p2",
+        "id": "p2_f",
         "name": "Poshak Fancy Design 2",
         "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/3pc_set/orange_set.jpeg",
         "prices": {
@@ -152,7 +152,7 @@
         }
       },
       {
-        "id": "p3",
+        "id": "p3_f",
         "name": "Poshak Fancy Design 3",
         "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/3pc_set/pink_sanil_set.jpeg",
         "prices": {
@@ -160,7 +160,7 @@
         }
       },
       {
-        "id": "p4",
+        "id": "p4_f",
         "name": "Poshak Fancy Design 4",
         "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/3pc_set/yellow_pink.jpeg",
         "prices": {
@@ -168,7 +168,7 @@
         }
       },
       {
-        "id": "p5",
+        "id": "p5_f",
         "name": "Poshak Fancy Design 5",
         "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/3pc_set/yellow_red_Sanil.jpeg",
         "prices": {

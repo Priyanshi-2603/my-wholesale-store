@@ -11,23 +11,35 @@ st.set_page_config(
 with open("products.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
-# ---------------- CART SYSTEM ----------------
+# ---------------- CART FILE ----------------
+CART_FILE = "cart_data.json"
+
+# ---------------- LOAD CART (PERSIST AFTER REFRESH) ----------------
 if "cart" not in st.session_state:
-    st.session_state.cart = []
+    if os.path.exists(CART_FILE):
+        with open(CART_FILE, "r") as f:
+            st.session_state.cart = json.load(f)
+    else:
+        st.session_state.cart = []
 
 
+# ---------------- ADD TO CART FUNCTION ----------------
 def add_to_cart(product_name, size, price, dozens, image):
-    st.session_state.cart.append(
-        {
-            "product": product_name,
-            "size": size,
-            "price_per_piece": price,
-            "dozens": dozens,
-            "quantity": dozens * 12,
-            "total_price": price * 12 * dozens,
-            "image": image,
-        }
-    )
+    item = {
+        "product": product_name,
+        "size": size,
+        "price_per_piece": price,
+        "dozens": dozens,
+        "quantity": dozens * 12,
+        "total_price": price * 12 * dozens,
+        "image": image,
+    }
+
+    st.session_state.cart.append(item)
+
+    # SAVE CART TO FILE
+    with open(CART_FILE, "w") as f:
+        json.dump(st.session_state.cart, f)
 
 
 # ---------------- UI ----------------
@@ -69,43 +81,38 @@ for sub_name, products in products_by_sub.items():
 
             st.markdown(f"### {p.get('name','Unnamed')}")
 
-            img_path = p.get("image", "")
-
-            if img_path.startswith("http"):
-                st.image(img_path, use_column_width=True)
+            # Show Image (URL supported)
+            img_url = p.get("image", "")
+            if img_url:
+                st.image(img_url, use_column_width=True)
             else:
-                local_path = os.path.join("images", img_path)
-                if os.path.exists(local_path):
-                    st.image(local_path, use_column_width=True)
-                else:
-                    st.warning("Image not found.")
+                st.warning("Image not found.")
 
-            # ---------------- SIZE SELECTION ----------------
             prices = p.get("prices", {})
 
             if prices:
                 size = st.selectbox(
-                    "Select Size", list(prices.keys()), key=f"size_{p['name']}"
+                    "Select Size",
+                    list(prices.keys()),
+                    key=f"size_{category}_{sub_name}_{p['id']}",
                 )
 
                 price = prices[size]
                 st.write(f"💵 Price per piece: ₹{price}")
 
-                # ---------------- DOZEN INPUT ----------------
                 dozens = st.number_input(
                     "Select Quantity (in dozens)",
                     min_value=1,
                     step=1,
                     value=1,
-                    key=f"dozen_{p['name']}",
+                    key=f"dozen_{p['id']}",
                 )
 
                 st.write(f"Total Pieces: {dozens * 12}")
                 st.write(f"Total Price: ₹{price * 12 * dozens}")
 
-                # ---------------- ADD TO CART ----------------
-                if st.button("Add to Cart", key=f"btn_{p['name']}"):
-                    add_to_cart(p["name"], size, price, dozens, p.get("image", ""))
+                if st.button("Add to Cart", key=f"btn_{p['id']}"):
+                    add_to_cart(p["name"], size, price, dozens, img_url)
                     st.success("Added to cart ✅")
 
             st.markdown("---")
@@ -149,5 +156,13 @@ if total > 0:
         f"Place Order on WhatsApp</button></a>",
         unsafe_allow_html=True,
     )
+
+    # Clear cart after order
+    if st.button("✅ Clear Cart After Order"):
+        st.session_state.cart = []
+        if os.path.exists(CART_FILE):
+            os.remove(CART_FILE)
+        st.success("Cart Cleared Successfully 🎉")
+
 else:
     st.info("Your cart is empty.")
