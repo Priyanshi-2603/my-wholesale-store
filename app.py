@@ -105,7 +105,7 @@ for sub_name, products in products_by_sub.items():
 
                 # ---------------- ADD TO CART ----------------
                 if st.button("Add to Cart", key=f"btn_{p['name']}"):
-                    add_to_cart(p["name"], size, price, dozens, img_rel)
+                    add_to_cart(p["name"], size, price, dozens, p.get("image", ""))
                     st.success("Added to cart ✅")
 
             st.markdown("---")
