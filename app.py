@@ -3,7 +3,9 @@ import json
 import os
 import urllib.parse
 
-st.set_page_config(page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide")
+st.set_page_config(
+    page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide"
+)
 
 # ---------------- LOAD PRODUCT DATA ----------------
 with open("products.json", "r", encoding="utf-8") as f:
@@ -13,16 +15,20 @@ with open("products.json", "r", encoding="utf-8") as f:
 if "cart" not in st.session_state:
     st.session_state.cart = []
 
+
 def add_to_cart(product_name, size, price, dozens, image):
-    st.session_state.cart.append({
-        "product": product_name,
-        "size": size,
-        "price_per_piece": price,
-        "dozens": dozens,
-        "quantity": dozens * 12,
-        "total_price": price * 12 * dozens,
-        "image": image
-    })
+    st.session_state.cart.append(
+        {
+            "product": product_name,
+            "size": size,
+            "price_per_piece": price,
+            "dozens": dozens,
+            "quantity": dozens * 12,
+            "total_price": price * 12 * dozens,
+            "image": image,
+        }
+    )
+
 
 # ---------------- UI ----------------
 st.title("🛍 Shri Girraj Mukut Shringar Kendra Product Catalogue")
@@ -38,7 +44,9 @@ if subcategory == "All":
 else:
     products_by_sub = {subcategory: data[category].get(subcategory, [])}
 
-st.subheader(f"📌 Category: {category.upper()}  |  Subcategory: {subcategory.replace('_',' ').upper()}")
+st.subheader(
+    f"📌 Category: {category.upper()}  |  Subcategory: {subcategory.replace('_',' ').upper()}"
+)
 st.write("---")
 
 search = st.text_input("🔍 Search Product Name")
@@ -61,22 +69,23 @@ for sub_name, products in products_by_sub.items():
 
             st.markdown(f"### {p.get('name','Unnamed')}")
 
-            img_rel = p.get("image", "")
-            img_path = os.path.join("images", img_rel)
+            img_path = p.get("image", "")
 
-            if os.path.exists(img_path):
+            if img_path.startswith("http"):
                 st.image(img_path, use_column_width=True)
             else:
-                st.warning("Image not found.")
+                local_path = os.path.join("images", img_path)
+                if os.path.exists(local_path):
+                    st.image(local_path, use_column_width=True)
+                else:
+                    st.warning("Image not found.")
 
             # ---------------- SIZE SELECTION ----------------
             prices = p.get("prices", {})
 
             if prices:
                 size = st.selectbox(
-                    "Select Size",
-                    list(prices.keys()),
-                    key=f"size_{p['name']}"
+                    "Select Size", list(prices.keys()), key=f"size_{p['name']}"
                 )
 
                 price = prices[size]
@@ -88,7 +97,7 @@ for sub_name, products in products_by_sub.items():
                     min_value=1,
                     step=1,
                     value=1,
-                    key=f"dozen_{p['name']}"
+                    key=f"dozen_{p['name']}",
                 )
 
                 st.write(f"Total Pieces: {dozens * 12}")
@@ -118,7 +127,7 @@ for item in st.session_state.cart:
         f"Amount: ₹{item['total_price']}\n\n"
     )
     order_message += line
-    total += item['total_price']
+    total += item["total_price"]
 
 if total > 0:
     order_message += f"💰 *Final Amount:* ₹{total}\n"
@@ -136,8 +145,8 @@ if total > 0:
         f'<a href="{whatsapp_url}" target="_blank">'
         f'<button style="background-color:green;color:white;padding:10px 20px;'
         f'border:none;border-radius:5px;font-size:16px;">'
-        f'Place Order on WhatsApp</button></a>',
-        unsafe_allow_html=True
+        f"Place Order on WhatsApp</button></a>",
+        unsafe_allow_html=True,
     )
 else:
     st.info("Your cart is empty.")
