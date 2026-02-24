@@ -122,6 +122,7 @@ order_message = "🛍 *New Order - Shri Girraj Mukut Shringar Kendra*\n\n"
 for item in st.session_state.cart:
     line = (
         f"📦 *{item['product']}*\n"
+        f"🖼 Image: {item['image']}\n"
         f"Size: {item['size']}\n"
         f"Quantity: {item['dozens']} dozen ({item['quantity']} pcs)\n"
         f"Amount: ₹{item['total_price']}\n\n"
