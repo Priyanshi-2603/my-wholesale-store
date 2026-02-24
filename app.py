@@ -16,6 +16,7 @@ st.write("")
 st.write("")
 st.write("")
 st.title("🛍 !!!Shri Girraj Mukut Shringar Kendra Product Catalogue!!")
+st.title("🛍 !!!Shri Girraj Mukut Shringar Kendra Product Catalogue!!")
 
 # --- add simple CSS for background and cards ---
 st.markdown(
