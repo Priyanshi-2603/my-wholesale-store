@@ -1,7 +1,7 @@
 import streamlit as st
 import json
-import os
 import urllib.parse
+from streamlit_local_storage import LocalStorage
 
 st.set_page_config(
     page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide"
@@ -11,14 +11,15 @@ st.set_page_config(
 with open("products.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
-# ---------------- CART FILE ----------------
-CART_FILE = "cart_data.json"
+# ---------------- BROWSER LOCAL STORAGE ----------------
+local_storage = LocalStorage()
 
-# ---------------- LOAD CART (PERSIST AFTER REFRESH) ----------------
+# ---------------- LOAD CART (FROM BROWSER) ----------------
 if "cart" not in st.session_state:
-    if os.path.exists(CART_FILE):
-        with open(CART_FILE, "r") as f:
-            st.session_state.cart = json.load(f)
+    saved_cart = local_storage.getItem("cart")
+
+    if saved_cart:
+        st.session_state.cart = json.loads(saved_cart)
     else:
         st.session_state.cart = []
 
@@ -37,9 +38,8 @@ def add_to_cart(product_name, size, price, dozens, image):
 
     st.session_state.cart.append(item)
 
-    # SAVE CART TO FILE
-    with open(CART_FILE, "w") as f:
-        json.dump(st.session_state.cart, f)
+    # SAVE TO BROWSER
+    local_storage.setItem("cart", json.dumps(st.session_state.cart))
 
 
 # ---------------- UI ----------------
@@ -81,20 +81,19 @@ for sub_name, products in products_by_sub.items():
 
             st.markdown(f"### {p.get('name','Unnamed')}")
 
-            # Show Image (URL supported)
+            # Show image (URL supported)
             img_url = p.get("image", "")
             if img_url:
                 st.image(img_url, use_column_width=True)
-            else:
-                st.warning("Image not found.")
 
             prices = p.get("prices", {})
 
             if prices:
+
+                unique_key = f"{category}_{sub_name}_{p['id']}"
+
                 size = st.selectbox(
-                    "Select Size",
-                    list(prices.keys()),
-                    key=f"size_{category}_{sub_name}_{p['id']}",
+                    "Select Size", list(prices.keys()), key=f"size_{unique_key}"
                 )
 
                 price = prices[size]
@@ -105,13 +104,13 @@ for sub_name, products in products_by_sub.items():
                     min_value=1,
                     step=1,
                     value=1,
-                    key=f"dozen_{p['id']}",
+                    key=f"dozen_{unique_key}",
                 )
 
                 st.write(f"Total Pieces: {dozens * 12}")
                 st.write(f"Total Price: ₹{price * 12 * dozens}")
 
-                if st.button("Add to Cart", key=f"btn_{p['id']}"):
+                if st.button("Add to Cart", key=f"btn_{unique_key}"):
                     add_to_cart(p["name"], size, price, dozens, img_url)
                     st.success("Added to cart ✅")
 
@@ -157,11 +156,10 @@ if total > 0:
         unsafe_allow_html=True,
     )
 
-    # Clear cart after order
+    # Clear cart button
     if st.button("✅ Clear Cart After Order"):
         st.session_state.cart = []
-        if os.path.exists(CART_FILE):
-            os.remove(CART_FILE)
+        local_storage.deleteItem("cart")
         st.success("Cart Cleared Successfully 🎉")
 
 else:
