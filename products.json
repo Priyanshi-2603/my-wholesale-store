@@ -173,30 +173,6 @@
           "No.3": 12.33,
           "No.4": 18.5
         }
-      },
-      {
-        "id": "p10",
-        "name": "Poshak Design 10",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak10.jpeg",
-        "prices": {
-          "No.0": 6,
-          "No.1": 8,
-          "No.2": 9.5,
-          "No.3": 12.33,
-          "No.4": 18.5
-        }
-      },
-      {
-        "id": "p11",
-        "name": "Poshak Design 11",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak11.jpeg",
-        "prices": {
-          "No.0": 6,
-          "No.1": 8,
-          "No.2": 9.5,
-          "No.3": 12.33,
-          "No.4": 18.5
-        }
       }
     ],
     "3 pcs set fancy Poshak": [
