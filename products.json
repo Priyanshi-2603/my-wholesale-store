@@ -182,7 +182,7 @@
       {
         "id": "b2",
         "name": "Stone Bansi 1",
-        "image": "bansi/WhatsApp Image 2025-07-10 at 19.04.59 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/bansi/WhatsApp Image 2025-07-10 at 19.04.59 (1).jpeg",
         "prices": {
           "Standard": 35
         }
@@ -190,7 +190,7 @@
       {
         "id": "b3",
         "name": "Stone Bansi 2",
-        "image": "bansi/WhatsApp Image 2025-07-10 at 19.04.59 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/bansi/WhatsApp Image 2025-07-10 at 19.04.59 (2).jpeg",
         "prices": {
           "Standard": 35
         }
@@ -198,7 +198,7 @@
       {
         "id": "b4",
         "name": "Stone Bansi 3",
-        "image": "bansi/WhatsApp Image 2025-07-10 at 19.04.59.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/bansi/WhatsApp Image 2025-07-10 at 19.04.59.jpeg",
         "prices": {
           "Standard": 35
         }
@@ -206,7 +206,7 @@
       {
         "id": "b5",
         "name": "Stone Bansi 4",
-        "image": "bansi/WhatsApp Image 2025-07-10 at 19.05.00 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/bansi/WhatsApp Image 2025-07-10 at 19.05.00 (1).jpeg",
         "prices": {
           "Standard": 35
         }
@@ -214,7 +214,7 @@
       {
         "id": "b6",
         "name": "Stone Bansi 5",
-        "image": "bansi/WhatsApp Image 2025-07-10 at 19.05.00 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/bansi/WhatsApp Image 2025-07-10 at 19.05.00 (2).jpeg",
         "prices": {
           "Standard": 35
         }
@@ -222,7 +222,7 @@
       {
         "id": "b7",
         "name": "Stone Bansi 6",
-        "image": "bansi/WhatsApp Image 2025-07-10 at 19.05.00 (3).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/bansi/WhatsApp Image 2025-07-10 at 19.05.00 (3).jpeg",
         "prices": {
           "Standard": 35
         }
@@ -230,7 +230,7 @@
       {
         "id": "b8",
         "name": "Stone Bansi 7",
-        "image": "bansi/WhatsApp Image 2025-07-10 at 19.05.00.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/bansi/WhatsApp Image 2025-07-10 at 19.05.00.jpeg",
         "prices": {
           "Standard": 35
         }
@@ -238,7 +238,7 @@
       {
         "id": "b9",
         "name": "Stone Bansi 8",
-        "image": "bansi/WhatsApp Image 2025-12-14 at 11.12.17_9f21cfa2.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/bansi/WhatsApp Image 2025-12-14 at 11.12.17_9f21cfa2.jpg",
         "prices": {
           "Standard": 35
         }
@@ -246,7 +246,7 @@
       {
         "id": "b10",
         "name": "Stone Bansi 9",
-        "image": "bansi/bansi_1.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/bansi/bansi_1.jpg",
         "prices": {
           "Standard": 35
         }
@@ -254,7 +254,7 @@
       {
         "id": "b11",
         "name": "Stone Bansi 10",
-        "image": "bansi/bansi_2.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/bansi/bansi_2.jpg",
         "prices": {
           "Standard": 35
         }
@@ -262,7 +262,7 @@
       {
         "id": "b12",
         "name": "Stone Bansi 11",
-        "image": "bansi/bansi_3.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/bansi/bansi_3.jpg",
         "prices": {
           "Standard": 35
         }
@@ -270,7 +270,7 @@
       {
         "id": "b13",
         "name": "Stone Bansi 12",
-        "image": "bansi/bansi_4.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/bansi/bansi_4.jpg",
         "prices": {
           "Standard": 35
         }
@@ -278,7 +278,7 @@
       {
         "id": "b14",
         "name": "Stone Bansi 13",
-        "image": "bansi/bansi_5.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/bansi/bansi_5.jpg",
         "prices": {
           "Standard": 35
         }
