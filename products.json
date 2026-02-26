@@ -34,10 +34,22 @@
         "prices": {
           "No.0": 8.25,
           "No.1": 10.50,
-          "No.2": 13.166,
-          "No.4": 19.25,
-          "No.5": 25.416,
-          "No.6": 32.416
+          "No.2": 13,
+          "No.4": 19,
+          "No.5": 25,
+          "No.6": 32
+        }
+      },
+      {
+        "id": "KADHAI_DRESS",
+        "name": "KADHAI DRESS",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/KADHAI_DRESS.jpeg",
+        "prices": {
+          "No.0": 12,
+          "No.1": 16.50,
+          "No.2": 21,
+          "No.3": 27.50,
+          "No.4": 34
         }
       },
       {
