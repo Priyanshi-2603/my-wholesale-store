@@ -106,63 +106,124 @@
         }
       },
       {
-        "id": "p5",
-        "name": "Poshak Design 5",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak5.jpeg",
+        "id": "Titli_poshak",
+        "name": "Titli poshak",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/Titli_poshak.jpeg",
         "prices": {
-          "No.0": 6,
-          "No.1": 8,
-          "No.2": 9.5,
-          "No.3": 12.33,
-          "No.4": 18.5
+          "No.0": 5,
+          "No.1": 7,
+          "No.2": 8.50
         }
       },
       {
-        "id": "p6",
-        "name": "Poshak Design 6",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak6.jpeg",
+        "id": "2pcs_Cotton_frill",
+        "name": "2pcs Cotton frill",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/2pcs_Cotton_frill.jpeg",
         "prices": {
-          "No.0": 6,
-          "No.1": 8,
-          "No.2": 9.5,
-          "No.3": 12.33,
-          "No.4": 18.5
+          "No.0": 24,
+          "No.1": 30,
+          "No.2": 36,
+          "No.4": 48,
+          "No.5": 60,
+          "No.6": 72
         }
       },
       {
-        "id": "p7",
-        "name": "Poshak Design 7",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak7.jpeg",
+        "id": "Morpankh_Poshak_Dress",
+        "name": "Morpankh Poshak Dress",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/Morpankh_Poshak_Dress.jpeg",
         "prices": {
-          "No.0": 6,
-          "No.1": 8,
-          "No.2": 9.5,
-          "No.3": 12.33,
-          "No.4": 18.5
+          "No.0": 7,
+          "No.1": 9,
+          "No.2": 12,
+          "No.3": 15,
+          "No.4": 17,
+          "No.5": 24.583,
+          "No.6": 30
         }
       },
       {
-        "id": "p8",
-        "name": "Poshak Design 8",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak8.jpeg",
+        "id": "DOTTED_GOAT_DRESS",
+        "name": "DOTTED GOAT DRESS",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/DOTTED_GOAT_DRESS.jpeg",
         "prices": {
-          "No.0": 6,
-          "No.1": 8,
-          "No.2": 9.5,
-          "No.3": 12.33,
-          "No.4": 18.5
+          "No.4": 16,
+          "No.5": 21.416
         }
       },
       {
-        "id": "p9",
-        "name": "Poshak Design 9",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak9.jpeg",
+        "id": "cotton_frill_border",
+        "name": "cotton frill border",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/cotton_frill_border.jpeg",
         "prices": {
-          "No.0": 6,
+          "No.0": 7.166,
+          "No.1": 9.166,
+          "No.2": 11.50,
+          "No.4": 17,
+          "No.5": 22.5,
+          "No.6": 29.166
+        }
+      },
+      {
+        "id": "DOTTED_WHITE_DRESS",
+        "name": "DOTTED WHITE DRESS",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/DOTTED_WHITE_DRESS.jpeg",
+        "prices": {
+          "No.0": 6.5,
           "No.1": 8,
-          "No.2": 9.5,
-          "No.3": 12.33,
-          "No.4": 18.5
+          "No.2": 10.33,
+          "No.3": 12.5,
+          "No.4": 15.33,
+          "No.5": 21
+        }
+      },
+      {
+        "id": "Cotton_poshak",
+        "name": "Cotton_poshak",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/Cotton_poshak.jpeg",
+        "prices": {
+          "No.0": 7,
+          "No.1": 9,
+          "No.2": 11.33
+        }
+      },
+      {
+        "id": "Cotton_flower_petals",
+        "name": "Cotton_flower_petals",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/Cotton_flower_petals.jpeg",
+        "prices": {
+          "No.0": 30,
+          "No.1": 38,
+          "No.2": 45,
+          "No.4": 60,
+          "No.5": 75,
+          "No.6": 90
+        }
+      },
+      {
+        "id": "Colourful_lace_dress",
+        "name": "Colourful_lace_dress",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/Colourful_lace_dress.jpeg",
+        "prices": {
+          "No.0": 8,
+          "No.1": 11,
+          "No.2": 13.083,
+          "No.3": 18,
+          "No.4": 22
+        }
+      },
+      {
+        "id": "star_patter_dress",
+        "name": "star_patter_dress",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/star_patter_dress.jpeg",
+        "prices": {
+          "No.0": 5.5,
+          "No.1": 8,
+          "No.2": 10,
+          "No.3": 14,
+          "No.4": 16,
+          "No.5": 23.75,
+          "No.6": 29.5
         }
       }
     ],
