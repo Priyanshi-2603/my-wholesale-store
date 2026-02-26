@@ -290,7 +290,7 @@
       {
         "id": "ba1",
         "name": "Baal 1",
-        "image": "baal/WhatsApp Image 2025-07-11 at 15.24.57.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/WhatsApp Image 2025-07-11 at 15.24.57.jpeg",
         "prices": {
           "Standard": 30
         }
@@ -298,7 +298,7 @@
       {
         "id": "ba2",
         "name": "Baal 2",
-        "image": "baal/WhatsApp Image 2025-11-03 at 13.01.20_02798ada.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/WhatsApp Image 2025-11-03 at 13.01.20_02798ada.jpg",
         "prices": {
           "Standard": 30
         }
@@ -306,7 +306,7 @@
       {
         "id": "ba3",
         "name": "Baal 3",
-        "image": "baal/WhatsApp Image 2026-01-11 at 18.58.30.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/WhatsApp Image 2026-01-11 at 18.58.30.jpeg",
         "prices": {
           "Standard": 30
         }
@@ -314,7 +314,7 @@
       {
         "id": "ba4",
         "name": "Chavarbal",
-        "image": "baal/chavarbal.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/chavarbal.jpeg",
         "prices": {
           "Standard": 30
         }
@@ -322,7 +322,7 @@
       {
         "id": "ba5",
         "name": "Choti Bal",
-        "image": "baal/choti bal.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/choti bal.jpeg",
         "prices": {
           "Standard": 30
         }
@@ -330,7 +330,7 @@
       {
         "id": "ba6",
         "name": "Khule Baal",
-        "image": "baal/khule baal.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/khule baal.jpeg",
         "prices": {
           "Standard": 30
         }
@@ -338,7 +338,7 @@
       {
         "id": "ba7",
         "name": "Radha Rani Curly",
-        "image": "baal/radha rani curly.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/radha rani curly.jpeg",
         "prices": {
           "Standard": 30
         }
@@ -350,7 +350,7 @@
       {
         "id": "km1",
         "name": "Kundan Mala 1",
-        "image": "kundan_mala/1.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/1.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -358,7 +358,7 @@
       {
         "id": "km2",
         "name": "Kundan Mala 2",
-        "image": "kundan_mala/2.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/2.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -366,7 +366,7 @@
       {
         "id": "km3",
         "name": "Kundan Mala 3",
-        "image": "kundan_mala/3.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/3.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -374,7 +374,7 @@
       {
         "id": "km4",
         "name": "Kundan Mala 4",
-        "image": "kundan_mala/4.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/4.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -382,7 +382,7 @@
       {
         "id": "km5",
         "name": "Kundan Mala 6",
-        "image": "kundan_mala/6.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/6.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -390,7 +390,7 @@
       {
         "id": "km6",
         "name": "Kundan Mala 8",
-        "image": "kundan_mala/8.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/8.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -398,7 +398,7 @@
       {
         "id": "km7",
         "name": "Kundan Mala 9",
-        "image": "kundan_mala/9.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/9.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -406,7 +406,7 @@
       {
         "id": "km8",
         "name": "Kundan Mala 10",
-        "image": "kundan_mala/10.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/10.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -414,7 +414,7 @@
       {
         "id": "km9",
         "name": "Kundan Mala 15",
-        "image": "kundan_mala/15.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/15.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -422,7 +422,7 @@
       {
         "id": "km10",
         "name": "Kundan Mala 16",
-        "image": "kundan_mala/16.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/16.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -430,7 +430,7 @@
       {
         "id": "km11",
         "name": "Kundan Mala 17",
-        "image": "kundan_mala/17.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/17.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -438,7 +438,7 @@
       {
         "id": "km12",
         "name": "Kundan Mala 18",
-        "image": "kundan_mala/18.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/18.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -446,7 +446,7 @@
       {
         "id": "km13",
         "name": "Kundan Mala 19",
-        "image": "kundan_mala/19.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/19.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -454,7 +454,7 @@
       {
         "id": "km14",
         "name": "Kundan Mala A",
-        "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.49 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.49 (1).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -462,7 +462,7 @@
       {
         "id": "km15",
         "name": "Kundan Mala B",
-        "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.49 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.49 (2).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -470,7 +470,7 @@
       {
         "id": "km16",
         "name": "Kundan Mala C",
-        "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50 (1).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -478,7 +478,7 @@
       {
         "id": "km17",
         "name": "Kundan Mala D",
-        "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50 (2).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -486,7 +486,7 @@
       {
         "id": "km18",
         "name": "Kundan Mala E",
-        "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -494,7 +494,7 @@
       {
         "id": "km19",
         "name": "Kundan Mala F",
-        "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51 (1).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -502,7 +502,7 @@
       {
         "id": "km20",
         "name": "Kundan Mala G",
-        "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51 (2).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -510,7 +510,7 @@
       {
         "id": "km21",
         "name": "Kundan Mala H",
-        "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -518,7 +518,7 @@
       {
         "id": "km22",
         "name": "Kundan Mala I",
-        "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.52 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.52 (1).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -526,7 +526,7 @@
       {
         "id": "km23",
         "name": "Kundan Mala J",
-        "image": "kundan_mala/WhatsApp Image 2025-07-11 at 13.09.52.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.52.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -534,7 +534,7 @@
       {
         "id": "km24",
         "name": "Kundan Mala New",
-        "image": "kundan_mala/WhatsApp Image 2026-01-11 at 19.02.53.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2026-01-11 at 19.02.53.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -546,7 +546,7 @@
       {
         "id": "j1",
         "name": "Jhula 1",
-        "image": "jhula/WhatsApp Image 2025-07-11 at 14.29.58.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/jhula/WhatsApp Image 2025-07-11 at 14.29.58.jpeg",
         "prices": {
           "Standard": 250
         }
@@ -558,7 +558,7 @@
       {
         "id": "ma1",
         "name": "Mala 1",
-        "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.39 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (1).jpeg",
         "prices": {
           "Standard": 25
         }
@@ -566,7 +566,7 @@
       {
         "id": "ma2",
         "name": "Mala 2",
-        "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.39 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (2).jpeg",
         "prices": {
           "Standard": 25
         }
@@ -574,7 +574,7 @@
       {
         "id": "ma3",
         "name": "Mala 3",
-        "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.39 (3).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (3).jpeg",
         "prices": {
           "Standard": 25
         }
@@ -582,7 +582,7 @@
       {
         "id": "ma4",
         "name": "Mala 4",
-        "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.39 (4).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (4).jpeg",
         "prices": {
           "Standard": 25
         }
@@ -590,7 +590,7 @@
       {
         "id": "ma5",
         "name": "Mala 5",
-        "image": "Mala/WhatsApp Image 2025-07-04 at 13.01.39 (5).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (5).jpeg",
         "prices": {
           "Standard": 25
         }
@@ -602,7 +602,7 @@
       {
         "id": "ka1",
         "name": "Kada 1",
-        "image": "Kada/WhatsApp Image 2025-07-10 at 19.01.37 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Kada/WhatsApp Image 2025-07-10 at 19.01.37 (1).jpeg",
         "prices": {
           "Standard": 40
         }
@@ -610,7 +610,7 @@
       {
         "id": "ka2",
         "name": "Kada 2",
-        "image": "Kada/WhatsApp Image 2025-07-10 at 19.01.37 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Kada/WhatsApp Image 2025-07-10 at 19.01.37 (2).jpeg",
         "prices": {
           "Standard": 40
         }
@@ -618,7 +618,7 @@
       {
         "id": "ka3",
         "name": "Kada 3",
-        "image": "Kada/WhatsApp Image 2025-07-10 at 19.01.37.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Kada/WhatsApp Image 2025-07-10 at 19.01.37.jpeg",
         "prices": {
           "Standard": 40
         }
@@ -630,7 +630,7 @@
       {
         "id": "kb1",
         "name": "Kamarband 1",
-        "image": "KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.45_5d64b8cf.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.45_5d64b8cf.jpg",
         "prices": {
           "Standard": 60
         }
@@ -638,7 +638,7 @@
       {
         "id": "kb2",
         "name": "Kamarband 2",
-        "image": "KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.46_1ebbf8f9.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.46_1ebbf8f9.jpg",
         "prices": {
           "Standard": 60
         }
@@ -650,7 +650,7 @@
       {
         "id": "mu1",
         "name": "Mukut 1",
-        "image": "MUKUT/WhatsApp Image 2025-10-31 at 21.04.05_5bcacda8.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/MUKUT/WhatsApp Image 2025-10-31 at 21.04.05_5bcacda8.jpg",
         "prices": {
           "Standard": 80
         }
@@ -658,7 +658,7 @@
       {
         "id": "mu2",
         "name": "Mukut 2",
-        "image": "MUKUT/WhatsApp Image 2025-11-02 at 18.53.00_5ef70741.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/MUKUT/WhatsApp Image 2025-11-02 at 18.53.00_5ef70741.jpg",
         "prices": {
           "Standard": 80
         }
@@ -666,7 +666,7 @@
       {
         "id": "mu3",
         "name": "Mukut 3",
-        "image": "MUKUT/WhatsApp Image 2025-11-02 at 19.48.41_8b99e544.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/MUKUT/WhatsApp Image 2025-11-02 at 19.48.41_8b99e544.jpg",
         "prices": {
           "Standard": 80
         }
