@@ -2,6 +2,23 @@ import streamlit as st
 import json
 import urllib.parse
 from streamlit_local_storage import LocalStorage
+import io
+import requests
+from reportlab.platypus import (
+    SimpleDocTemplate,
+    Paragraph,
+    Spacer,
+    Image,
+    Table,
+    TableStyle,
+)
+from reportlab.lib import colors
+from reportlab.lib.styles import ParagraphStyle
+from reportlab.lib.units import inch
+from reportlab.lib.pagesizes import A4
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase import pdfmetrics
+from reportlab.lib.styles import getSampleStyleSheet
 
 st.set_page_config(
     page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide"
@@ -119,6 +136,58 @@ for sub_name, products in products_by_sub.items():
         idx += 1
 
 
+def generate_pdf(cart_items, total_amount):
+
+    buffer = io.BytesIO()
+    doc = SimpleDocTemplate(buffer, pagesize=A4)
+    elements = []
+
+    styles = getSampleStyleSheet()
+    title_style = styles["Heading1"]
+
+    elements.append(Paragraph("Shri Girraj Mukut Shringar Kendra", title_style))
+    elements.append(Spacer(1, 12))
+
+    elements.append(Paragraph("Order Summary", styles["Heading2"]))
+    elements.append(Spacer(1, 12))
+
+    for item in cart_items:
+
+        elements.append(
+            Paragraph(f"<b>Product:</b> {item['product']}", styles["Normal"])
+        )
+        elements.append(Paragraph(f"Size: {item['size']}", styles["Normal"]))
+        elements.append(
+            Paragraph(
+                f"Quantity: {item['dozens']} dozen ({item['quantity']} pcs)",
+                styles["Normal"],
+            )
+        )
+        elements.append(Paragraph(f"Total: ₹{item['total_price']}", styles["Normal"]))
+        elements.append(Spacer(1, 6))
+
+        # Add Image
+        try:
+            response = requests.get(item["image"])
+            img_data = io.BytesIO(response.content)
+            img = Image(img_data, width=2 * inch, height=2 * inch)
+            elements.append(img)
+        except:
+            elements.append(Paragraph("Image not available", styles["Normal"]))
+
+        elements.append(Spacer(1, 20))
+
+    elements.append(
+        Paragraph(f"<b>Final Amount: ₹{total_amount}</b>", styles["Heading2"])
+    )
+    elements.append(Spacer(1, 12))
+    elements.append(Paragraph("Delivery Charges: Not Included", styles["Normal"]))
+
+    doc.build(elements)
+    buffer.seek(0)
+    return buffer
+
+
 # ================= CART SECTION =================
 st.header("🛒 Cart Summary")
 
@@ -137,6 +206,15 @@ for item in st.session_state.cart:
     total += item["total_price"]
 
 if total > 0:
+    pdf_file = generate_pdf(st.session_state.cart, total)
+
+    st.download_button(
+        label="📄 Download Order PDF",
+        data=pdf_file,
+        file_name="order_summary.pdf",
+        mime="application/pdf",
+    )
+
     order_message += f"💰 *Final Amount:* ₹{total}\n"
     order_message += "🚚 Delivery Charges: Not Included\n"
 
