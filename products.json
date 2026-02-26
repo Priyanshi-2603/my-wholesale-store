@@ -2,15 +2,11 @@
   "poshak": {
     "Cotton_poshak": [
       {
-        "id": "p1",
-        "name": "Poshak Design 1",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak1.jpeg",
+        "id": "cotton_ribbon",
+        "name": "cotton_ribbon",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/cotton_ribbon.jpeg",
         "prices": {
-          "No.0": 6,
-          "No.1": 8,
-          "No.2": 9.5,
-          "No.3": 12.33,
-          "No.4": 18.5
+          "No.2": 8
         }
       },
       {
@@ -79,9 +75,17 @@
         }
       },
       {
-        "id": "p2",
-        "name": "Poshak Design 2",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak2.jpeg",
+        "id": "Dotted_chalu_poshak",
+        "name": "Dotted Chalu Poshak",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/Dotted_chalu_poshak.jpeg",
+        "prices": {
+          "No.2": 7
+        }
+      },
+      {
+        "id": "kolapuri_design_dress",
+        "name": "Kolapuri Design Dress",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/kolapuri_design_dress.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 8,
@@ -91,27 +95,14 @@
         }
       },
       {
-        "id": "p3",
-        "name": "Poshak Design 3",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak3.jpeg",
+        "id": "2pcs_Poshak_cotton",
+        "name": "2pcs Poshak cotton",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/2pcs_Poshak_cotton.jpeg",
         "prices": {
-          "No.0": 6,
-          "No.1": 8,
-          "No.2": 9.5,
-          "No.3": 12.33,
-          "No.4": 18.5
-        }
-      },
-      {
-        "id": "p4",
-        "name": "Poshak Design 4",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak4.jpeg",
-        "prices": {
-          "No.0": 6,
-          "No.1": 8,
-          "No.2": 9.5,
-          "No.3": 12.33,
-          "No.4": 18.5
+          "No.2": 20,
+          "No.4": 29,
+          "No.5": 37,
+          "No.6": 47
         }
       },
       {
