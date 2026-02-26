@@ -18,11 +18,26 @@
         "name": "Small Flower Cotton",
         "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/small_flower_cotton.jpeg",
         "prices": {
-          "No.0": 6,
-          "No.1": 8,
-          "No.2": 9.5,
-          "No.3": 12.33,
-          "No.4": 18.5
+          "No.0": 5,
+          "No.1": 7,
+          "No.2": 8.5,
+          "No.3": 12,
+          "No.4": 16,
+          "No.5": 20,
+          "No.6": 25
+        }
+      },
+      {
+        "id": "net_cotton",
+        "name": "Net Cotton",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/net_cotton.jpeg",
+        "prices": {
+          "No.0": 8.25,
+          "No.1": 10.50,
+          "No.2": 13.166,
+          "No.4": 19.25,
+          "No.5": 25.416,
+          "No.6": 32.416
         }
       },
       {
