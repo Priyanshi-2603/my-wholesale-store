@@ -4,7 +4,7 @@
       {
         "id": "p1",
         "name": "Poshak Design 1",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/poshak1.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak1.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 8,
@@ -15,8 +15,8 @@
       },
       {
         "id": "small_flower_cotton",
-        "name": "Small_Flower Cotton",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/poshak/cotton_poshak/small_flower_cotton.jpeg",
+        "name": "Small Flower Cotton",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/small_flower_cotton.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 8,
@@ -28,7 +28,7 @@
       {
         "id": "p2",
         "name": "Poshak Design 2",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/poshak2.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak2.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 8,
@@ -40,7 +40,7 @@
       {
         "id": "p3",
         "name": "Poshak Design 3",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/poshak3.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak3.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 8,
@@ -52,7 +52,7 @@
       {
         "id": "p4",
         "name": "Poshak Design 4",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/poshak4.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak4.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 8,
@@ -64,7 +64,7 @@
       {
         "id": "p5",
         "name": "Poshak Design 5",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/poshak5.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak5.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 8,
@@ -76,7 +76,7 @@
       {
         "id": "p6",
         "name": "Poshak Design 6",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/poshak6.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak6.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 8,
@@ -88,7 +88,7 @@
       {
         "id": "p7",
         "name": "Poshak Design 7",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/poshak7.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak7.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 8,
@@ -100,7 +100,7 @@
       {
         "id": "p8",
         "name": "Poshak Design 8",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/poshak8.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak8.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 8,
@@ -112,7 +112,7 @@
       {
         "id": "p9",
         "name": "Poshak Design 9",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/poshak9.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak9.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 8,
@@ -124,7 +124,7 @@
       {
         "id": "p10",
         "name": "Poshak Design 10",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/poshak10.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak10.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 8,
@@ -136,7 +136,7 @@
       {
         "id": "p11",
         "name": "Poshak Design 11",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/poshak11.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak11.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 8,
@@ -150,7 +150,7 @@
       {
         "id": "p1_f",
         "name": "Poshak Fancy Design 1",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/3pc_set/blue_set.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/3pc_set/blue_set.jpeg",
         "prices": {
           "Set": 120
         }
@@ -158,7 +158,7 @@
       {
         "id": "p2_f",
         "name": "Poshak Fancy Design 2",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/3pc_set/orange_set.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/3pc_set/orange_set.jpeg",
         "prices": {
           "Set": 120
         }
@@ -166,7 +166,7 @@
       {
         "id": "p3_f",
         "name": "Poshak Fancy Design 3",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/3pc_set/pink_sanil_set.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/3pc_set/pink_sanil_set.jpeg",
         "prices": {
           "Set": 120
         }
@@ -174,7 +174,7 @@
       {
         "id": "p4_f",
         "name": "Poshak Fancy Design 4",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/3pc_set/yellow_pink.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/3pc_set/yellow_pink.jpeg",
         "prices": {
           "Set": 120
         }
@@ -182,7 +182,7 @@
       {
         "id": "p5_f",
         "name": "Poshak Fancy Design 5",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/3pc_set/yellow_red_Sanil.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/3pc_set/yellow_red_Sanil.jpeg",
         "prices": {
           "Set": 120
         }
@@ -194,7 +194,7 @@
       {
         "id": "b2",
         "name": "Stone Bansi 1",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/bansi/WhatsApp Image 2025-07-10 at 19.04.59 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/bansi/WhatsApp Image 2025-07-10 at 19.04.59 (1).jpeg",
         "prices": {
           "Standard": 35
         }
@@ -202,7 +202,7 @@
       {
         "id": "b3",
         "name": "Stone Bansi 2",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/bansi/WhatsApp Image 2025-07-10 at 19.04.59 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/bansi/WhatsApp Image 2025-07-10 at 19.04.59 (2).jpeg",
         "prices": {
           "Standard": 35
         }
@@ -210,7 +210,7 @@
       {
         "id": "b4",
         "name": "Stone Bansi 3",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/bansi/WhatsApp Image 2025-07-10 at 19.04.59.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/bansi/WhatsApp Image 2025-07-10 at 19.04.59.jpeg",
         "prices": {
           "Standard": 35
         }
@@ -218,7 +218,7 @@
       {
         "id": "b5",
         "name": "Stone Bansi 4",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/bansi/WhatsApp Image 2025-07-10 at 19.05.00 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/bansi/WhatsApp Image 2025-07-10 at 19.05.00 (1).jpeg",
         "prices": {
           "Standard": 35
         }
@@ -226,7 +226,7 @@
       {
         "id": "b6",
         "name": "Stone Bansi 5",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/bansi/WhatsApp Image 2025-07-10 at 19.05.00 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/bansi/WhatsApp Image 2025-07-10 at 19.05.00 (2).jpeg",
         "prices": {
           "Standard": 35
         }
@@ -234,7 +234,7 @@
       {
         "id": "b7",
         "name": "Stone Bansi 6",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/bansi/WhatsApp Image 2025-07-10 at 19.05.00 (3).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/bansi/WhatsApp Image 2025-07-10 at 19.05.00 (3).jpeg",
         "prices": {
           "Standard": 35
         }
@@ -242,7 +242,7 @@
       {
         "id": "b8",
         "name": "Stone Bansi 7",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/bansi/WhatsApp Image 2025-07-10 at 19.05.00.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/bansi/WhatsApp Image 2025-07-10 at 19.05.00.jpeg",
         "prices": {
           "Standard": 35
         }
@@ -250,7 +250,7 @@
       {
         "id": "b9",
         "name": "Stone Bansi 8",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/bansi/WhatsApp Image 2025-12-14 at 11.12.17_9f21cfa2.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/bansi/WhatsApp Image 2025-12-14 at 11.12.17_9f21cfa2.jpg",
         "prices": {
           "Standard": 35
         }
@@ -258,7 +258,7 @@
       {
         "id": "b10",
         "name": "Stone Bansi 9",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/bansi/bansi_1.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/bansi/bansi_1.jpg",
         "prices": {
           "Standard": 35
         }
@@ -266,7 +266,7 @@
       {
         "id": "b11",
         "name": "Stone Bansi 10",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/bansi/bansi_2.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/bansi/bansi_2.jpg",
         "prices": {
           "Standard": 35
         }
@@ -274,7 +274,7 @@
       {
         "id": "b12",
         "name": "Stone Bansi 11",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/bansi/bansi_3.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/bansi/bansi_3.jpg",
         "prices": {
           "Standard": 35
         }
@@ -282,7 +282,7 @@
       {
         "id": "b13",
         "name": "Stone Bansi 12",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/bansi/bansi_4.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/bansi/bansi_4.jpg",
         "prices": {
           "Standard": 35
         }
@@ -290,7 +290,7 @@
       {
         "id": "b14",
         "name": "Stone Bansi 13",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/bansi/bansi_5.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/bansi/bansi_5.jpg",
         "prices": {
           "Standard": 35
         }
@@ -302,7 +302,7 @@
       {
         "id": "ba1",
         "name": "Baal 1",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/WhatsApp Image 2025-07-11 at 15.24.57.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/baal/WhatsApp Image 2025-07-11 at 15.24.57.jpeg",
         "prices": {
           "Standard": 30
         }
@@ -310,7 +310,7 @@
       {
         "id": "ba2",
         "name": "Baal 2",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/WhatsApp Image 2025-11-03 at 13.01.20_02798ada.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/baal/WhatsApp Image 2025-11-03 at 13.01.20_02798ada.jpg",
         "prices": {
           "Standard": 30
         }
@@ -318,7 +318,7 @@
       {
         "id": "ba3",
         "name": "Baal 3",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/WhatsApp Image 2026-01-11 at 18.58.30.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/baal/WhatsApp Image 2026-01-11 at 18.58.30.jpeg",
         "prices": {
           "Standard": 30
         }
@@ -326,7 +326,7 @@
       {
         "id": "ba4",
         "name": "Chavarbal",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/chavarbal.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/baal/chavarbal.jpeg",
         "prices": {
           "Standard": 30
         }
@@ -334,7 +334,7 @@
       {
         "id": "ba5",
         "name": "Choti Bal",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/choti bal.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/baal/choti bal.jpeg",
         "prices": {
           "Standard": 30
         }
@@ -342,7 +342,7 @@
       {
         "id": "ba6",
         "name": "Khule Baal",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/khule baal.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/baal/khule baal.jpeg",
         "prices": {
           "Standard": 30
         }
@@ -350,7 +350,7 @@
       {
         "id": "ba7",
         "name": "Radha Rani Curly",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/baal/radha rani curly.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/baal/radha rani curly.jpeg",
         "prices": {
           "Standard": 30
         }
@@ -362,7 +362,7 @@
       {
         "id": "km1",
         "name": "Kundan Mala 1",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/1.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/1.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -370,7 +370,7 @@
       {
         "id": "km2",
         "name": "Kundan Mala 2",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/2.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/2.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -378,7 +378,7 @@
       {
         "id": "km3",
         "name": "Kundan Mala 3",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/3.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/3.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -386,7 +386,7 @@
       {
         "id": "km4",
         "name": "Kundan Mala 4",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/4.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/4.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -394,7 +394,7 @@
       {
         "id": "km5",
         "name": "Kundan Mala 6",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/6.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/6.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -402,7 +402,7 @@
       {
         "id": "km6",
         "name": "Kundan Mala 8",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/8.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/8.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -410,7 +410,7 @@
       {
         "id": "km7",
         "name": "Kundan Mala 9",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/9.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/9.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -418,7 +418,7 @@
       {
         "id": "km8",
         "name": "Kundan Mala 10",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/10.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/10.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -426,7 +426,7 @@
       {
         "id": "km9",
         "name": "Kundan Mala 15",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/15.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/15.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -434,7 +434,7 @@
       {
         "id": "km10",
         "name": "Kundan Mala 16",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/16.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/16.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -442,7 +442,7 @@
       {
         "id": "km11",
         "name": "Kundan Mala 17",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/17.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/17.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -450,7 +450,7 @@
       {
         "id": "km12",
         "name": "Kundan Mala 18",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/18.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/18.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -458,7 +458,7 @@
       {
         "id": "km13",
         "name": "Kundan Mala 19",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/19.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/19.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -466,7 +466,7 @@
       {
         "id": "km14",
         "name": "Kundan Mala A",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.49 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.49 (1).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -474,7 +474,7 @@
       {
         "id": "km15",
         "name": "Kundan Mala B",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.49 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.49 (2).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -482,7 +482,7 @@
       {
         "id": "km16",
         "name": "Kundan Mala C",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50 (1).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -490,7 +490,7 @@
       {
         "id": "km17",
         "name": "Kundan Mala D",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50 (2).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -498,7 +498,7 @@
       {
         "id": "km18",
         "name": "Kundan Mala E",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.50.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -506,7 +506,7 @@
       {
         "id": "km19",
         "name": "Kundan Mala F",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51 (1).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -514,7 +514,7 @@
       {
         "id": "km20",
         "name": "Kundan Mala G",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51 (2).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -522,7 +522,7 @@
       {
         "id": "km21",
         "name": "Kundan Mala H",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.51.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -530,7 +530,7 @@
       {
         "id": "km22",
         "name": "Kundan Mala I",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.52 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.52 (1).jpeg",
         "prices": {
           "Standard": 45
         }
@@ -538,7 +538,7 @@
       {
         "id": "km23",
         "name": "Kundan Mala J",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.52.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/WhatsApp Image 2025-07-11 at 13.09.52.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -546,7 +546,7 @@
       {
         "id": "km24",
         "name": "Kundan Mala New",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/kundan_mala/WhatsApp Image 2026-01-11 at 19.02.53.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/kundan_mala/WhatsApp Image 2026-01-11 at 19.02.53.jpeg",
         "prices": {
           "Standard": 45
         }
@@ -558,7 +558,7 @@
       {
         "id": "j1",
         "name": "Jhula 1",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/jhula/WhatsApp Image 2025-07-11 at 14.29.58.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/jhula/WhatsApp Image 2025-07-11 at 14.29.58.jpeg",
         "prices": {
           "Standard": 250
         }
@@ -570,7 +570,7 @@
       {
         "id": "ma1",
         "name": "Mala 1",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (1).jpeg",
         "prices": {
           "Standard": 25
         }
@@ -578,7 +578,7 @@
       {
         "id": "ma2",
         "name": "Mala 2",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (2).jpeg",
         "prices": {
           "Standard": 25
         }
@@ -586,7 +586,7 @@
       {
         "id": "ma3",
         "name": "Mala 3",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (3).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (3).jpeg",
         "prices": {
           "Standard": 25
         }
@@ -594,7 +594,7 @@
       {
         "id": "ma4",
         "name": "Mala 4",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (4).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (4).jpeg",
         "prices": {
           "Standard": 25
         }
@@ -602,7 +602,7 @@
       {
         "id": "ma5",
         "name": "Mala 5",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (5).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/Mala/WhatsApp Image 2025-07-04 at 13.01.39 (5).jpeg",
         "prices": {
           "Standard": 25
         }
@@ -614,7 +614,7 @@
       {
         "id": "ka1",
         "name": "Kada 1",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Kada/WhatsApp Image 2025-07-10 at 19.01.37 (1).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/Kada/WhatsApp Image 2025-07-10 at 19.01.37 (1).jpeg",
         "prices": {
           "Standard": 40
         }
@@ -622,7 +622,7 @@
       {
         "id": "ka2",
         "name": "Kada 2",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Kada/WhatsApp Image 2025-07-10 at 19.01.37 (2).jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/Kada/WhatsApp Image 2025-07-10 at 19.01.37 (2).jpeg",
         "prices": {
           "Standard": 40
         }
@@ -630,7 +630,7 @@
       {
         "id": "ka3",
         "name": "Kada 3",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/Kada/WhatsApp Image 2025-07-10 at 19.01.37.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/Kada/WhatsApp Image 2025-07-10 at 19.01.37.jpeg",
         "prices": {
           "Standard": 40
         }
@@ -642,7 +642,7 @@
       {
         "id": "kb1",
         "name": "Kamarband 1",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.45_5d64b8cf.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.45_5d64b8cf.jpg",
         "prices": {
           "Standard": 60
         }
@@ -650,7 +650,7 @@
       {
         "id": "kb2",
         "name": "Kamarband 2",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.46_1ebbf8f9.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/KAMARBAND/WhatsApp Image 2025-11-05 at 22.33.46_1ebbf8f9.jpg",
         "prices": {
           "Standard": 60
         }
@@ -662,7 +662,7 @@
       {
         "id": "mu1",
         "name": "Mukut 1",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/MUKUT/WhatsApp Image 2025-10-31 at 21.04.05_5bcacda8.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/MUKUT/WhatsApp Image 2025-10-31 at 21.04.05_5bcacda8.jpg",
         "prices": {
           "Standard": 80
         }
@@ -670,7 +670,7 @@
       {
         "id": "mu2",
         "name": "Mukut 2",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/MUKUT/WhatsApp Image 2025-11-02 at 18.53.00_5ef70741.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/MUKUT/WhatsApp Image 2025-11-02 at 18.53.00_5ef70741.jpg",
         "prices": {
           "Standard": 80
         }
@@ -678,7 +678,7 @@
       {
         "id": "mu3",
         "name": "Mukut 3",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/streamlit_catalogue/main/images/MUKUT/WhatsApp Image 2025-11-02 at 19.48.41_8b99e544.jpg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/MUKUT/WhatsApp Image 2025-11-02 at 19.48.41_8b99e544.jpg",
         "prices": {
           "Standard": 80
         }
