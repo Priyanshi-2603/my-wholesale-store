@@ -34,10 +34,36 @@
         "prices": {
           "No.0": 8.25,
           "No.1": 10.50,
-          "No.2": 13,
-          "No.4": 19,
-          "No.5": 25,
-          "No.6": 32
+          "No.2": 13.166,
+          "No.4": 19.25,
+          "No.5": 25.4166,
+          "No.6": 32.4166
+        }
+      },
+      {
+        "id": "LINING_BORDER_DRESS",
+        "name": "LINING BORDER DRESS",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/LINING_BORDER_DRESS.jpeg",
+        "prices": {
+          "No.0": 6.5,
+          "No.1": 8.5,
+          "No.2": 10.66,
+          "No.3": 13.166,
+          "No.4": 16.166,
+          "No.5": 22,
+          "No.6": 28.833
+        }
+      },
+      {
+        "id": "Dotted_pattern_dress",
+        "name": "Dotted pattern dress",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/cotton_poshak/Dotted_pattern_dress.jpeg",
+        "prices": {
+          "No.0": 5.5,
+          "No.1": 8,
+          "No.2": 10,
+          "No.3": 14,
+          "No.4": 16
         }
       },
       {
@@ -49,7 +75,7 @@
           "No.1": 16.50,
           "No.2": 21,
           "No.3": 27.50,
-          "No.4": 34
+          "No.4": 34.833
         }
       },
       {
