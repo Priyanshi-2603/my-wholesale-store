@@ -18,16 +18,64 @@ st.set_page_config(
     page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide"
 )
 
+# ---------------- SESSION STATE ----------------
+if "cart" not in st.session_state:
+    st.session_state.cart = []
+
+if "order_success" not in st.session_state:
+    st.session_state.order_success = False
+
+# ---------------- ORDER SUCCESS PAGE ----------------
+if st.session_state.order_success:
+
+    st.title("🎉 Your Order is Placed Successfully!")
+
+    st.success("✅ Order has been sent to our email successfully.")
+    st.markdown("### 📱 Please confirm your order on WhatsApp")
+
+    business_number = "917417866405"
+
+    message = f"""
+🛍 Order Placed
+
+Name: {st.session_state.last_name}
+Mobile: {st.session_state.last_whatsapp}
+Total Amount: ₹{st.session_state.last_total}
+
+Please confirm the order.
+"""
+
+    encoded = urllib.parse.quote(message)
+    whatsapp_url = (
+        f"https://api.whatsapp.com/send?phone={business_number}&text={encoded}"
+    )
+
+    st.markdown(
+        f'<a href="{whatsapp_url}" target="_blank">'
+        f'<button style="background-color:#25D366;color:white;'
+        f"padding:18px 40px;border:none;border-radius:8px;"
+        f'font-size:20px;font-weight:bold;">'
+        f"🚀 Send Order on WhatsApp"
+        f"</button></a>",
+        unsafe_allow_html=True,
+    )
+
+    if st.button("⬅ Back to Shop"):
+        st.session_state.order_success = False
+        st.rerun()
+
+    st.stop()
+
 # ---------------- LOAD PRODUCTS ----------------
 with open("products.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 local_storage = LocalStorage()
 
-# ---------------- LOAD CART ----------------
-if "cart" not in st.session_state:
-    saved_cart = local_storage.getItem("cart")
-    st.session_state.cart = json.loads(saved_cart) if saved_cart else []
+# ---------------- LOAD CART FROM BROWSER ----------------
+saved_cart = local_storage.getItem("cart")
+if saved_cart:
+    st.session_state.cart = json.loads(saved_cart)
 
 
 # ---------------- ADD TO CART ----------------
@@ -223,41 +271,25 @@ if total > 0:
         else:
 
             success = send_order_email(
-                st.session_state.cart, total, pdf_file, customer_name, customer_whatsapp
+                st.session_state.cart,
+                total,
+                pdf_file,
+                customer_name,
+                customer_whatsapp,
             )
 
             if success:
+                # Save order info for success page
+                st.session_state.last_name = customer_name
+                st.session_state.last_whatsapp = customer_whatsapp
+                st.session_state.last_total = total
+                st.session_state.order_success = True
 
+                # Clear cart
                 st.session_state.cart = []
                 local_storage.deleteItem("cart")
 
-                st.success("🎉 Thank you for your order!")
-                st.info("We will contact you soon.")
-
-                # WhatsApp Button
-                business_number = "917417866405"
-
-                message = f"""
-🛍 Order Placed
-
-Name: {customer_name}
-Mobile: {customer_whatsapp}
-Total Amount: ₹{total}
-
-Please confirm the order.
-"""
-
-                encoded = urllib.parse.quote(message)
-                whatsapp_url = f"https://api.whatsapp.com/send?phone={business_number}&text={encoded}"
-
-                st.markdown(
-                    f'<a href="{whatsapp_url}" target="_blank">'
-                    f'<button style="background-color:#25D366;color:white;'
-                    f'padding:12px 25px;border:none;border-radius:6px;font-size:16px;">'
-                    f"Send Order on WhatsApp"
-                    f"</button></a>",
-                    unsafe_allow_html=True,
-                )
+                st.rerun()
 
     st.download_button(
         label="⬇ Download PDF Only",
