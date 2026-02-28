@@ -19,6 +19,10 @@ from reportlab.lib.pagesizes import A4
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfbase import pdfmetrics
 from reportlab.lib.styles import getSampleStyleSheet
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
+import base64
+
 
 st.set_page_config(
     page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide"
@@ -188,51 +192,79 @@ def generate_pdf(cart_items, total_amount):
     return buffer
 
 
+def send_order_email(cart_items, total_amount, pdf_buffer):
+
+    configuration = sib_api_v3_sdk.Configuration()
+    configuration.api_key["api-key"] = st.secrets["BREVO_API_KEY"]
+
+    api_instance = sib_api_v3_sdk.TransactionalEmailsApi(
+        sib_api_v3_sdk.ApiClient(configuration)
+    )
+
+    html_content = "<h2>New Order Received</h2><br>"
+
+    for item in cart_items:
+        html_content += f"""
+        <div style="margin-bottom:20px;">
+            <img src="{item['image']}" width="150"><br>
+            <b>Product:</b> {item['product']}<br>
+            <b>Size:</b> {item['size']}<br>
+            <b>Quantity:</b> {item['dozens']} dozen ({item['quantity']} pcs)<br>
+            <b>Total:</b> ₹{item['total_price']}<br>
+        </div>
+        """
+
+    html_content += f"""
+    <h3>Final Amount: ₹{total_amount}</h3>
+    <p>Delivery Charges: Not Included</p>
+    """
+
+    pdf_base64 = base64.b64encode(pdf_buffer.getvalue()).decode()
+
+    send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(
+        to=[{"email": st.secrets["RECEIVER_EMAIL"]}],
+        sender={"email": st.secrets["SENDER_EMAIL"]},
+        subject="New Order - Shri Girraj Mukut Shringar Kendra",
+        html_content=html_content,
+        attachment=[{"content": pdf_base64, "name": "order_summary.pdf"}],
+    )
+
+    try:
+        api_instance.send_transac_email(send_smtp_email)
+        return True
+    except ApiException as e:
+        st.error("Email sending failed")
+        return False
+
+
 # ================= CART SECTION =================
 st.header("🛒 Cart Summary")
 
 total = 0
-order_message = "🛍 *New Order - Shri Girraj Mukut Shringar Kendra*\n\n"
 
 for item in st.session_state.cart:
-    line = (
-        f"📦 *{item['product']}*\n"
-        f"🖼 Image: {item['image']}\n"
-        f"Size: {item['size']}\n"
-        f"Quantity: {item['dozens']} dozen ({item['quantity']} pcs)\n"
-        f"Amount: ₹{item['total_price']}\n\n"
-    )
-    order_message += line
     total += item["total_price"]
 
 if total > 0:
+
     pdf_file = generate_pdf(st.session_state.cart, total)
 
+    if st.button("📄 Download PDF & Send Order to Email"):
+
+        success = send_order_email(st.session_state.cart, total, pdf_file)
+
+        if success:
+            st.success("✅ Order Sent to Email Successfully!")
+
     st.download_button(
-        label="📄 Download Order PDF",
+        label="⬇ Download Only PDF",
         data=pdf_file,
         file_name="order_summary.pdf",
         mime="application/pdf",
     )
 
-    order_message += f"💰 *Final Amount:* ₹{total}\n"
-    order_message += "🚚 Delivery Charges: Not Included\n"
-
     st.subheader(f"💰 Final Amount: ₹{total}")
     st.write("🚚 Delivery Charges Not Included")
-
-    encoded_message = urllib.parse.quote(order_message)
-
-    whatsapp_number = "917417866405"
-    whatsapp_url = f"https://wa.me/{whatsapp_number}?text={encoded_message}"
-
-    st.markdown(
-        f'<a href="{whatsapp_url}" target="_blank">'
-        f'<button style="background-color:green;color:white;padding:10px 20px;'
-        f'border:none;border-radius:5px;font-size:16px;">'
-        f"Place Order on WhatsApp</button></a>",
-        unsafe_allow_html=True,
-    )
 
     # Clear cart button
     if st.button("✅ Clear Cart After Order"):
