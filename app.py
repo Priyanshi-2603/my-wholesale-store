@@ -228,6 +228,7 @@ if st.session_state.page == "shop":
 
                     if st.button("Add to Cart", key=f"add_{p['id']}"):
                         add_to_cart(p["name"], size, price, dozens, p["image"])
+                        st.success("Added to cart ✅")
                         st.rerun()
 
             idx += 1
