@@ -275,28 +275,68 @@ if total > 0:
             if success:
                 st.success("✅ Order Sent to Email Successfully!")
 
-                # ✅ WhatsApp Confirmation Message
+                # ================= WHATSAPP CONFIRMATION TO BUSINESS =================
+                business_number = "917417866405"  # add 91 country code
+
                 confirmation_msg = f"""
-Hello {customer_name},
+🛍 *New Order Received*
 
-Thank you for placing your order with Shri Girraj Mukut Shringar Kendra 🙏
+👤 Customer Name: {customer_name}
+📱 Customer WhatsApp: {customer_whatsapp}
 
-Your total order amount is ₹{total}.
-We will contact you shortly for confirmation.
-
-Thank you!
 """
 
-                encoded_msg = urllib.parse.quote(confirmation_msg)
-                whatsapp_url = f"https://wa.me/{customer_whatsapp}?text={encoded_msg}"
+    for item in st.session_state.cart:
+        confirmation_msg += f"""
+📦 {item['product']}
+Size: {item['size']}
+Qty: {item['dozens']} dozen ({item['quantity']} pcs)
+Amount: ₹{item['total_price']}
 
-                st.markdown(
-                    f'<a href="{whatsapp_url}" target="_blank">'
-                    f'<button style="background-color:green;color:white;padding:10px 20px;'
-                    f'border:none;border-radius:5px;font-size:16px;">'
-                    f"Send Confirmation on WhatsApp</button></a>",
-                    unsafe_allow_html=True,
-                )
+"""
+
+    confirmation_msg += f"""
+💰 *Final Amount:* ₹{total}
+🚚 Delivery Charges: Not Included
+"""
+
+    encoded_msg = urllib.parse.quote(confirmation_msg)
+
+    whatsapp_url = f"https://wa.me/{business_number}?text={encoded_msg}"
+
+    st.markdown(
+        f'<a href="{whatsapp_url}" target="_blank">'
+        f'<button style="background-color:green;color:white;padding:12px 25px;'
+        f'border:none;border-radius:6px;font-size:16px;">'
+        f"Send Order on WhatsApp</button></a>",
+        unsafe_allow_html=True,
+    )
+
+    #             if success:
+    #                 st.success("✅ Order Sent to Email Successfully!")
+
+    #                 # ✅ WhatsApp Confirmation Message
+    #                 confirmation_msg = f"""
+    # Hello {customer_name},
+
+    # Thank you for placing your order with Shri Girraj Mukut Shringar Kendra 🙏
+
+    # Your total order amount is ₹{total}.
+    # We will contact you shortly for confirmation.
+
+    # Thank you!
+    # """
+
+    #                 encoded_msg = urllib.parse.quote(confirmation_msg)
+    #                 whatsapp_url = f"https://wa.me/{customer_whatsapp}?text={encoded_msg}"
+
+    #                 st.markdown(
+    #                     f'<a href="{whatsapp_url}" target="_blank">'
+    #                     f'<button style="background-color:green;color:white;padding:10px 20px;'
+    #                     f'border:none;border-radius:5px;font-size:16px;">'
+    #                     f"Send Confirmation on WhatsApp</button></a>",
+    #                     unsafe_allow_html=True,
+    #                 )
 
     # ✅ Download Only PDF Button
     st.download_button(
