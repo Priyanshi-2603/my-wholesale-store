@@ -1,7 +1,6 @@
 import streamlit as st
 import json
 import urllib.parse
-from streamlit_local_storage import LocalStorage
 import io
 import requests
 import base64
@@ -16,31 +15,28 @@ from reportlab.lib.pagesizes import A4
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
-    page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide"
+    page_title="Shri Girraj Mukut Shringar Kendra Mathura",
+    layout="wide"
 )
 
 # ---------------- LOAD PRODUCTS ----------------
 with open("products.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
-local_storage = LocalStorage()
-
 # ---------------- SESSION INIT ----------------
 if "cart" not in st.session_state:
-    saved_cart = local_storage.getItem("cart")
-    st.session_state.cart = json.loads(saved_cart) if saved_cart else []
+    st.session_state.cart = []
 
 if "page" not in st.session_state:
     st.session_state.page = "shop"
 
 
-# ---------------- CART UPDATE FUNCTION ----------------
+# ---------------- UPDATE CART FUNCTION ----------------
 def update_cart(product_name, size, price, dozens, image):
 
-    # Remove old entry of same product+size
+    # Remove existing same product+size
     st.session_state.cart = [
-        item
-        for item in st.session_state.cart
+        item for item in st.session_state.cart
         if not (item["product"] == product_name and item["size"] == size)
     ]
 
@@ -54,8 +50,6 @@ def update_cart(product_name, size, price, dozens, image):
             "image": image,
         }
         st.session_state.cart.append(item)
-
-    local_storage.setItem("cart", json.dumps(st.session_state.cart))
 
 
 # ---------------- PDF GENERATION ----------------
@@ -73,14 +67,13 @@ def generate_pdf(cart_items, total, name, whatsapp):
     elements.append(Spacer(1, 12))
 
     for item in cart_items:
-        elements.append(
-            Paragraph(f"<b>Product:</b> {item['product']}", styles["Normal"])
-        )
+
+        elements.append(Paragraph(f"<b>Product:</b> {item['product']}", styles["Normal"]))
         elements.append(Paragraph(f"Size: {item['size']}", styles["Normal"]))
         elements.append(
             Paragraph(
                 f"Quantity: {item['dozens']} dozen ({item['quantity']} pcs)",
-                styles["Normal"],
+                styles["Normal"]
             )
         )
         elements.append(Paragraph(f"Total: ₹{item['total_price']}", styles["Normal"]))
@@ -97,6 +90,7 @@ def generate_pdf(cart_items, total, name, whatsapp):
         elements.append(Spacer(1, 20))
 
     elements.append(Paragraph(f"<b>Final Amount: ₹{total}</b>", styles["Heading2"]))
+
     doc.build(elements)
     buffer.seek(0)
     return buffer
@@ -184,29 +178,41 @@ if st.session_state.page == "shop":
                 st.markdown(f"### {p['name']}")
 
                 if p.get("image"):
-                    st.image(p["image"], width="stretch")
+                    st.image(p["image"], use_container_width=True)
 
                 prices = p.get("prices", {})
                 if prices:
 
                     size = st.selectbox(
-                        "Select Size", list(prices.keys()), key=f"{p['id']}_size"
+                        "Select Size",
+                        list(prices.keys()),
+                        key=f"{p['id']}_size"
                     )
 
                     price = prices[size]
+                    input_key = f"{p['id']}_{size}"
+
+                    def quantity_changed(product=p, size=size, price=price):
+                        dozens_value = st.session_state[input_key]
+                        update_cart(
+                            product["name"],
+                            size,
+                            price,
+                            dozens_value,
+                            product["image"]
+                        )
 
                     dozens = st.number_input(
                         "Quantity (dozens)",
                         min_value=0,
                         value=0,
                         step=1,
-                        key=f"{p['id']}_{size}",
+                        key=input_key,
+                        on_change=quantity_changed
                     )
 
                     if dozens > 0:
                         st.write(f"Total: ₹{price * 12 * dozens}")
-
-                    update_cart(p["name"], size, price, dozens, p["image"])
 
             idx += 1
 
@@ -228,10 +234,14 @@ elif st.session_state.page == "checkout":
     if st.button("⬅ Back to Shop"):
         st.session_state.page = "shop"
 
+    total = sum(item["total_price"] for item in st.session_state.cart)
+
+    if total == 0:
+        st.warning("Your cart is empty.")
+        st.stop()
+
     customer_name = st.text_input("Customer Name")
     customer_whatsapp = st.text_input("Customer WhatsApp Number")
-
-    total = sum(item["total_price"] for item in st.session_state.cart)
 
     st.subheader(f"Total Amount: ₹{total}")
 
@@ -242,42 +252,38 @@ elif st.session_state.page == "checkout":
         else:
 
             pdf_file = generate_pdf(
-                st.session_state.cart, total, customer_name, customer_whatsapp
+                st.session_state.cart, total,
+                customer_name, customer_whatsapp
             )
 
             success = send_order_email(
-                st.session_state.cart, total, pdf_file, customer_name, customer_whatsapp
+                st.session_state.cart, total,
+                pdf_file, customer_name, customer_whatsapp
             )
 
             if success:
-
-                st.session_state.page = "success"
-
                 st.session_state.cart = []
-                local_storage.deleteItem("cart")
+                st.session_state.page = "success"
 
 
 # ========================= SUCCESS PAGE =========================
 elif st.session_state.page == "success":
 
     st.success("🎉 Your Order is Placed Successfully!")
-    st.info("Please send order confirmation on WhatsApp.")
+    st.info("Please send confirmation on WhatsApp.")
 
     business_number = "917417866405"
 
     message = "I have placed the order. Please check."
-
     encoded = urllib.parse.quote(message)
-    whatsapp_url = (
-        f"https://api.whatsapp.com/send?phone={business_number}&text={encoded}"
-    )
+    whatsapp_url = f"https://api.whatsapp.com/send?phone={business_number}&text={encoded}"
 
     st.markdown(
         f'<a href="{whatsapp_url}" target="_blank">'
         f'<button style="background-color:#25D366;color:white;'
         f'padding:14px 30px;border:none;border-radius:8px;font-size:18px;">'
         f"Send Confirmation on WhatsApp"
-        f"</button></a>",
+        f"</button></a>',
         unsafe_allow_html=True,
     )
 
