@@ -28,6 +28,8 @@ st.set_page_config(
     page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide"
 )
 
+st.write("API Key Loaded:", st.secrets["BREVO_API_KEY"])
+
 # ---------------- LOAD PRODUCT DATA ----------------
 with open("products.json", "r", encoding="utf-8") as f:
     data = json.load(f)
@@ -233,7 +235,7 @@ def send_order_email(cart_items, total_amount, pdf_buffer):
         api_instance.send_transac_email(send_smtp_email)
         return True
     except ApiException as e:
-        st.error("Email sending failed")
+        st.error(f"Email sending failed: {e}")
         return False
 
 
