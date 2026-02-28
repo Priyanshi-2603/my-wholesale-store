@@ -1,6 +1,7 @@
 import streamlit as st
 import json
 import urllib.parse
+from streamlit_local_storage import LocalStorage
 import io
 import requests
 import base64
@@ -12,44 +13,40 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import A4
 
-
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
     page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide"
 )
 
+# ---------------- SESSION PAGE CONTROL ----------------
+if "page" not in st.session_state:
+    st.session_state.page = "shop"
+
 # ---------------- LOAD PRODUCTS ----------------
 with open("products.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
-# ---------------- SESSION INIT ----------------
+local_storage = LocalStorage()
+
+# ---------------- LOAD CART ----------------
 if "cart" not in st.session_state:
-    st.session_state.cart = []
-
-if "page" not in st.session_state:
-    st.session_state.page = "shop"
+    saved_cart = local_storage.getItem("cart")
+    st.session_state.cart = json.loads(saved_cart) if saved_cart else []
 
 
-# ---------------- UPDATE CART FUNCTION ----------------
-def update_cart(product_name, size, price, dozens, image):
+# ---------------- ADD TO CART ----------------
+def add_to_cart(product_name, size, price, dozens, image):
+    item = {
+        "product": product_name,
+        "size": size,
+        "dozens": dozens,
+        "quantity": dozens * 12,
+        "total_price": price * 12 * dozens,
+        "image": image,
+    }
 
-    # Remove same product+size first
-    st.session_state.cart = [
-        item
-        for item in st.session_state.cart
-        if not (item["product"] == product_name and item["size"] == size)
-    ]
-
-    if dozens > 0:
-        item = {
-            "product": product_name,
-            "size": size,
-            "dozens": dozens,
-            "quantity": dozens * 12,
-            "total_price": price * 12 * dozens,
-            "image": image,
-        }
-        st.session_state.cart.append(item)
+    st.session_state.cart.append(item)
+    local_storage.setItem("cart", json.dumps(st.session_state.cart))
 
 
 # ---------------- PDF GENERATION ----------------
@@ -62,12 +59,12 @@ def generate_pdf(cart_items, total, name, whatsapp):
 
     elements.append(Paragraph("Shri Girraj Mukut Shringar Kendra", styles["Heading1"]))
     elements.append(Spacer(1, 12))
+
     elements.append(Paragraph(f"Customer Name: {name}", styles["Normal"]))
     elements.append(Paragraph(f"WhatsApp: {whatsapp}", styles["Normal"]))
     elements.append(Spacer(1, 12))
 
     for item in cart_items:
-
         elements.append(
             Paragraph(f"<b>Product:</b> {item['product']}", styles["Normal"])
         )
@@ -92,6 +89,8 @@ def generate_pdf(cart_items, total, name, whatsapp):
         elements.append(Spacer(1, 20))
 
     elements.append(Paragraph(f"<b>Final Amount: ₹{total}</b>", styles["Heading2"]))
+    elements.append(Spacer(1, 12))
+    elements.append(Paragraph("Delivery Charges: Not Included", styles["Normal"]))
 
     doc.build(elements)
     buffer.seek(0)
@@ -146,7 +145,10 @@ def send_order_email(cart_items, total, pdf_buffer, name, whatsapp):
         return False
 
 
-# ========================= SHOP PAGE =========================
+# ============================================================
+# ================= SHOP PAGE ================================
+# ============================================================
+
 if st.session_state.page == "shop":
 
     st.title("🛍 Shri Girraj Mukut Shringar Kendra")
@@ -161,7 +163,7 @@ if st.session_state.page == "shop":
         else {subcategory: data[category][subcategory]}
     )
 
-    search = st.text_input("🔍 Search Product Name")
+    search = st.text_input("🔍 Search Product")
 
     for sub_name, products in products_by_sub.items():
 
@@ -179,7 +181,7 @@ if st.session_state.page == "shop":
                 st.markdown(f"### {p['name']}")
 
                 if p.get("image"):
-                    st.image(p["image"], use_container_width=True)
+                    st.image(p["image"], width="stretch")
 
                 prices = p.get("prices", {})
                 if prices:
@@ -189,92 +191,58 @@ if st.session_state.page == "shop":
                     )
 
                     price = prices[size]
-                    input_key = f"{p['id']}_{size}"
-
-                    def quantity_changed(product=p, size=size, price=price):
-                        dozens_value = st.session_state[input_key]
-                        update_cart(
-                            product["name"],
-                            size,
-                            price,
-                            dozens_value,
-                            product["image"],
-                        )
 
                     dozens = st.number_input(
-                        "Quantity (dozens)",
-                        min_value=0,
-                        value=0,
-                        step=1,
-                        key=input_key,
-                        on_change=quantity_changed,
+                        "Select Quantity (dozens)",
+                        min_value=1,
+                        value=1,
+                        key=f"{p['id']}_qty",
                     )
 
-                    if dozens > 0:
-                        st.write(f"Total: ₹{price * 12 * dozens}")
+                    st.write(f"Total Price: ₹{price * 12 * dozens}")
+
+                    if st.button("Add to Cart", key=p["id"]):
+                        add_to_cart(p["name"], size, price, dozens, p["image"])
+                        st.success("Added to cart ✅")
 
             idx += 1
 
-    total = sum(item["total_price"] for item in st.session_state.cart)
-
-    if total > 0:
+    # Floating Place Order Button
+    if len(st.session_state.cart) > 0:
         st.markdown("---")
-        st.subheader(f"🛒 Cart Total: ₹{total}")
-
         if st.button("🛒 Place Order"):
             st.session_state.page = "checkout"
             st.rerun()
 
 
-# ========================= CHECKOUT PAGE =========================
-elif st.session_state.page == "checkout":
+# ============================================================
+# ================= CHECKOUT PAGE ============================
+# ============================================================
 
-    st.title("🧾 Checkout")
+if st.session_state.page == "checkout":
+
+    st.title("🧾 Checkout Page")
 
     if st.button("⬅ Back to Shop"):
         st.session_state.page = "shop"
+        st.rerun()
 
-    total = sum(item["total_price"] for item in st.session_state.cart)
-
-    if total == 0:
-        st.warning("Your cart is empty.")
-        st.stop()
-
-    st.markdown("### 🛒 Order Summary")
-
-    for item in st.session_state.cart:
-        col1, col2 = st.columns([1, 2])
-
-        with col1:
-            if item.get("image"):
-                st.image(item["image"], width=120)
-
-        with col2:
-            st.markdown(
-                f"""
-            **{item['product']}**
-            - Size: {item['size']}
-            - Quantity: {item['dozens']} dozen ({item['quantity']} pcs)
-            - Total: ₹{item['total_price']}
-            """
-            )
+    st.markdown("---")
 
     customer_name = st.text_input("Customer Name")
     customer_whatsapp = st.text_input("Customer WhatsApp Number")
 
-    st.subheader(f"Total Amount: ₹{total}")
+    total = sum(item["total_price"] for item in st.session_state.cart)
+    st.subheader(f"Final Amount: ₹{total}")
 
-    if st.button("✅ Confirm & Place Order"):
+    if st.button("✅ Place Order Now"):
 
         if not customer_name or not customer_whatsapp:
-            st.warning("Please fill all details.")
+            st.warning("Please fill all details before placing order.")
         else:
 
             pdf_file = generate_pdf(
-                st.session_state.cart,
-                total,
-                customer_name,
-                customer_whatsapp,
+                st.session_state.cart, total, customer_name, customer_whatsapp
             )
 
             success = send_order_email(
@@ -286,41 +254,33 @@ elif st.session_state.page == "checkout":
             )
 
             if success:
+
+                st.success("🎉 Your Order is Placed Successfully!")
+                st.info("Please confirm your order on WhatsApp.")
+
+                business_number = "917417866405"
+
+                message = f"""
+🛍 Order Placed
+
+Name: {customer_name}
+Mobile: {customer_whatsapp}
+Total Amount: ₹{total}
+
+Please confirm the order.
+"""
+
+                encoded = urllib.parse.quote(message)
+                whatsapp_url = f"https://api.whatsapp.com/send?phone={business_number}&text={encoded}"
+
+                st.markdown(
+                    f'<a href="{whatsapp_url}" target="_blank">'
+                    f'<button style="background-color:#25D366;color:white;'
+                    f'padding:12px 25px;border:none;border-radius:6px;font-size:16px;">'
+                    f"Send Order on WhatsApp"
+                    f"</button></a>",
+                    unsafe_allow_html=True,
+                )
+
                 st.session_state.cart = []
-                st.session_state.page = "success"
-                st.rerun()
-
-
-# ========================= SUCCESS PAGE =========================
-elif st.session_state.page == "success":
-
-    st.success("🎉 Your Order is Placed Successfully!")
-    st.info("Please send confirmation on WhatsApp.")
-
-    business_number = "917417866405"
-    message = "I have placed the order. Please check."
-    encoded = urllib.parse.quote(message)
-    whatsapp_url = (
-        f"https://api.whatsapp.com/send?phone={business_number}&text={encoded}"
-    )
-
-    st.markdown(
-        f"""
-        <a href="{whatsapp_url}" target="_blank">
-            <button style="
-                background-color:#25D366;
-                color:white;
-                padding:14px 30px;
-                border:none;
-                border-radius:8px;
-                font-size:18px;
-                cursor:pointer;">
-                Send Confirmation on WhatsApp
-            </button>
-        </a>
-        """,
-        unsafe_allow_html=True,
-    )
-
-    if st.button("🏠 Back to Shop"):
-        st.session_state.page = "shop"
+                local_storage.deleteItem("cart")
