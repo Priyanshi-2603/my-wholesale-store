@@ -223,6 +223,7 @@ if st.session_state.page == "shop":
 
         if st.button("🛒 Place Order"):
             st.session_state.page = "checkout"
+            st.rerun()
 
 
 # ========================= CHECKOUT PAGE =========================
@@ -287,6 +288,7 @@ elif st.session_state.page == "checkout":
             if success:
                 st.session_state.cart = []
                 st.session_state.page = "success"
+                st.rerun()
 
 
 # ========================= SUCCESS PAGE =========================
