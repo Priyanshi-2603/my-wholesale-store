@@ -33,9 +33,13 @@ if "cart" not in st.session_state:
     saved_cart = local_storage.getItem("cart")
     st.session_state.cart = json.loads(saved_cart) if saved_cart else []
 
+# ---------------- PRODUCT ADD SUCCESS TRACKER ----------------
+if "added_product" not in st.session_state:
+    st.session_state.added_product = None
+
 
 # ---------------- ADD TO CART ----------------
-def add_to_cart(product_name, size, price, dozens, image):
+def add_to_cart(product_id, product_name, size, price, dozens, image):
 
     # Remove same product+size first
     st.session_state.cart = [
@@ -56,8 +60,8 @@ def add_to_cart(product_name, size, price, dozens, image):
     st.session_state.cart.append(item)
     local_storage.setItem("cart", json.dumps(st.session_state.cart))
 
-    # Save last added product name
-    st.session_state.last_added = product_name
+    # Store which product was added
+    st.session_state.added_product = product_id
 
 
 # ---------------- PDF GENERATION ----------------
@@ -244,9 +248,13 @@ if st.session_state.page == "shop":
                     st.write(f"Total Price: ₹{price * 12 * dozens}")
 
                     if st.button("Add to Cart", key=f"add_{p['id']}"):
-                        add_to_cart(p["name"], size, price, dozens, p["image"])
+                        add_to_cart(p["id"], p["name"], size, price, dozens, p["image"])
                         st.success("Added to cart ✅")
                         st.rerun()
+
+                    if st.session_state.get("added_product") == p["id"]:
+                        st.success("✅ Added to cart successfully!")
+                        st.session_state.added_product = None
 
             idx += 1
 
