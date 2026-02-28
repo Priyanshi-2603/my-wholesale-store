@@ -377,7 +377,7 @@
       {
         "id": "DESIGN_11",
         "name": "DESIGN_11",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/sanil_poshak/DESIGN_11.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/sanil_poshak/DESIGN_11.jpeg",
         "prices": {
           "No.0": 6,
           "No.1": 9,
@@ -388,7 +388,7 @@
       {
         "id": "DESIGN12",
         "name": "DESIGN12",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/sanil_poshak/DESIGN12.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/sanil_poshak/DESIGN12.jpeg",
         "prices": {
           "No.0": 13,
           "No.1": 18,
@@ -401,7 +401,7 @@
       {
         "id": "design13",
         "name": "design13",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/sanil_poshak/design13.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/sanil_poshak/design13.jpeg",
         "prices": {
           "No.0": 6.5,
           "No.1": 8.5,
@@ -415,7 +415,7 @@
       {
         "id": "design14",
         "name": "design14",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/sanil_poshak/design14.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/sanil_poshak/design14.jpeg",
         "prices": {
           "No.0": 16,
           "No.1": 22,
@@ -430,7 +430,7 @@
       {
         "id": "3pcsset_1",
         "name": "3pcs set 1",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/3pcsset_1.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/3pcsset_1.jpeg",
         "prices": {
           "Set": 900
         }
@@ -438,7 +438,7 @@
       {
         "id": "3_pcs_Set_2",
         "name": "3 pcs Set 2",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/3_pcs_Set_2.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/3_pcs_Set_2.jpeg",
         "prices": {
           "No.1": 85,
           "No.2": 102,
@@ -450,7 +450,7 @@
       {
         "id": "Yellow_Dress_with_Real_Morpoankh",
         "name": "Yellow_Dress_with_Real_Morpoankh",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/Yellow_Dress_with_Real_Morpoankh.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/Yellow_Dress_with_Real_Morpoankh.jpeg",
         "prices": {
           "Set": 1080
         }
@@ -458,7 +458,7 @@
       {
         "id": "pink_balloon",
         "name": "pink balloon",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/pink_balloon.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/pink_balloon.jpeg",
         "prices": {
           "Set": 900
         }
@@ -466,7 +466,7 @@
       {
         "id": "peech_ballon",
         "name": "peech_ballon",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/peech_ballon.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/peech_ballon.jpeg",
         "prices": {
           "Set": 900
         }
@@ -474,15 +474,7 @@
       {
         "id": "yellow_mirror",
         "name": "yellow mirror",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/yellow_mirror.jpeg",
-        "prices": {
-          "Set": 1260
-        }
-      },
-      {
-        "id": "yellow_mirror",
-        "name": "yellow mirror",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/yellow_mirror.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/yellow_mirror.jpeg",
         "prices": {
           "Set": 1260
         }
@@ -490,7 +482,7 @@
       {
         "id": "yellow_velvet",
         "name": "yellow mirror",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/yellow_velvet.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/yellow_velvet.jpeg",
         "prices": {
           "Set": 1080
         }
@@ -498,7 +490,7 @@
       {
         "id": "pink_velvet",
         "name": "pink_velvet",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/pink_velvet.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/pink_velvet.jpeg",
         "prices": {
           "Set": 1080
         }
@@ -506,7 +498,7 @@
       {
         "id": "orange_velvet",
         "name": "orange velvet",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/orange_velvet.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/orange_velvet.jpeg",
         "prices": {
           "Set": 1080
         }
@@ -514,7 +506,7 @@
       {
         "id": "red_velvet",
         "name": "red_velvet",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/red_velvet.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/red_velvet.jpeg",
         "prices": {
           "Set": 1080
         }
@@ -522,7 +514,7 @@
       {
         "id": "Pink_kadai_velvet",
         "name": "Pink kadai velvet",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/Pink_kadai_velvet.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/Pink_kadai_velvet.jpeg",
         "prices": {
           "Set": 1080
         }
@@ -530,7 +522,7 @@
       {
         "id": "green_kadai_velvet",
         "name": "green kadai velvet",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/green_kadai_velvet.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/green_kadai_velvet.jpeg",
         "prices": {
           "Set": 1080
         }
@@ -538,7 +530,7 @@
       {
         "id": "yellow_net",
         "name": "yellow Net Dress",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/yellow_net.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/yellow_net.jpeg",
         "prices": {
           "Set": 1080
         }
@@ -546,7 +538,7 @@
       {
         "id": "yellow_red_velvet",
         "name": "yellow red velvet",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/yellow_red_velvet.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/yellow_red_velvet.jpeg",
         "prices": {
           "Set": 1080
         }
@@ -554,7 +546,7 @@
       {
         "id": "yellow_balloon",
         "name": "yellow balloon",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/yellow_balloon.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/yellow_balloon.jpeg",
         "prices": {
           "Set": 1025
         }
@@ -562,7 +554,7 @@
       {
         "id": "blue_ballon",
         "name": "blue ballon",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/blue_ballon.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/blue_ballon.jpeg",
         "prices": {
           "Set": 1025
         }
@@ -570,7 +562,7 @@
       {
         "id": "pink_balloon",
         "name": "pink_balloon",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/pink_balloon.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/pink_balloon.jpeg",
         "prices": {
           "Set": 1025
         }
@@ -578,7 +570,7 @@
       {
         "id": "red_balloon",
         "name": "red balloon",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/red_balloon.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/red_balloon.jpeg",
         "prices": {
           "Set": 1025
         }
@@ -586,7 +578,7 @@
       {
         "id": "green_ballon",
         "name": "green_ballon",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/green_ballon.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/green_ballon.jpeg",
         "prices": {
           "Set": 1025
         }
@@ -594,7 +586,7 @@
       {
         "id": "peech_red_balloon",
         "name": "peech red balloon",
-        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak_plus_pagdri_set/peech_red_balloon.jpeg",
+        "image": "https://raw.githubusercontent.com/Priyanshi-2603/my-wholesale-store/main/images/poshak/poshak_plus_pagdri_set/peech_red_balloon.jpeg",
         "prices": {
           "Set": 1025
         }
