@@ -13,6 +13,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import A4
 
+
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
     page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide"
@@ -24,7 +25,7 @@ with open("products.json", "r", encoding="utf-8") as f:
 
 local_storage = LocalStorage()
 
-# ---------------- LOAD CART ----------------
+# ---------------- SESSION INIT ----------------
 if "cart" not in st.session_state:
     saved_cart = local_storage.getItem("cart")
     st.session_state.cart = json.loads(saved_cart) if saved_cart else []
@@ -33,17 +34,27 @@ if "page" not in st.session_state:
     st.session_state.page = "shop"
 
 
-# ---------------- ADD TO CART ----------------
-def add_to_cart(product_name, size, price, dozens, image):
-    item = {
-        "product": product_name,
-        "size": size,
-        "dozens": dozens,
-        "quantity": dozens * 12,
-        "total_price": price * 12 * dozens,
-        "image": image,
-    }
-    st.session_state.cart.append(item)
+# ---------------- CART UPDATE FUNCTION ----------------
+def update_cart(product_name, size, price, dozens, image):
+
+    # Remove old entry of same product+size
+    st.session_state.cart = [
+        item
+        for item in st.session_state.cart
+        if not (item["product"] == product_name and item["size"] == size)
+    ]
+
+    if dozens > 0:
+        item = {
+            "product": product_name,
+            "size": size,
+            "dozens": dozens,
+            "quantity": dozens * 12,
+            "total_price": price * 12 * dozens,
+            "image": image,
+        }
+        st.session_state.cart.append(item)
+
     local_storage.setItem("cart", json.dumps(st.session_state.cart))
 
 
@@ -62,7 +73,6 @@ def generate_pdf(cart_items, total, name, whatsapp):
     elements.append(Spacer(1, 12))
 
     for item in cart_items:
-
         elements.append(
             Paragraph(f"<b>Product:</b> {item['product']}", styles["Normal"])
         )
@@ -87,9 +97,6 @@ def generate_pdf(cart_items, total, name, whatsapp):
         elements.append(Spacer(1, 20))
 
     elements.append(Paragraph(f"<b>Final Amount: ₹{total}</b>", styles["Heading2"]))
-    elements.append(Spacer(1, 12))
-    elements.append(Paragraph("Delivery Charges: Not Included", styles["Normal"]))
-
     doc.build(elements)
     buffer.seek(0)
     return buffer
@@ -143,13 +150,10 @@ def send_order_email(cart_items, total, pdf_buffer, name, whatsapp):
         return False
 
 
-# ============================================================
-# ================= SHOP PAGE ================================
-# ============================================================
-
+# ========================= SHOP PAGE =========================
 if st.session_state.page == "shop":
 
-    st.title("🛍 Shri Girraj Mukut Shringar Kendra Catalogue")
+    st.title("🛍 Shri Girraj Mukut Shringar Kendra")
 
     category = st.selectbox("Select Category", list(data.keys()))
     subcategory_list = list(data[category].keys())
@@ -161,12 +165,20 @@ if st.session_state.page == "shop":
         else {subcategory: data[category][subcategory]}
     )
 
+    search = st.text_input("🔍 Search Product Name")
+
     for sub_name, products in products_by_sub.items():
+
         st.markdown(f"### {sub_name}")
+
         cols = st.columns(2)
         idx = 0
 
         for p in products:
+
+            if search and search.lower() not in p["name"].lower():
+                continue
+
             with cols[idx % 2]:
 
                 st.markdown(f"### {p['name']}")
@@ -176,6 +188,7 @@ if st.session_state.page == "shop":
 
                 prices = p.get("prices", {})
                 if prices:
+
                     size = st.selectbox(
                         "Select Size", list(prices.keys()), key=f"{p['id']}_size"
                     )
@@ -183,59 +196,49 @@ if st.session_state.page == "shop":
                     price = prices[size]
 
                     dozens = st.number_input(
-                        "Select Quantity (dozens)",
-                        min_value=1,
-                        value=1,
-                        key=f"{p['id']}_qty",
+                        "Quantity (dozens)",
+                        min_value=0,
+                        value=0,
+                        step=1,
+                        key=f"{p['id']}_{size}",
                     )
 
-                    st.write(f"Total Price: ₹{price * 12 * dozens}")
+                    if dozens > 0:
+                        st.write(f"Total: ₹{price * 12 * dozens}")
 
-                    if st.button("Add to Cart", key=p["id"]):
-                        add_to_cart(p["name"], size, price, dozens, p["image"])
-                        st.success("Added to cart ✅")
+                    update_cart(p["name"], size, price, dozens, p["image"])
 
             idx += 1
 
-    # FIXED PLACE ORDER BUTTON (Always Visible)
-    if st.session_state.cart:
+    total = sum(item["total_price"] for item in st.session_state.cart)
+
+    if total > 0:
         st.markdown("---")
-        total = sum(item["total_price"] for item in st.session_state.cart)
+        st.subheader(f"🛒 Cart Total: ₹{total}")
 
-        st.markdown(
-            f"""
-            <div style="position:fixed;bottom:0;width:100%;
-                        background-color:#ff4b4b;padding:15px;
-                        text-align:center;">
-                <h3 style="color:white;">Total: ₹{total}</h3>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-        if st.button("🛒 Proceed to Checkout"):
+        if st.button("🛒 Place Order"):
             st.session_state.page = "checkout"
-            st.rerun()
 
-# ============================================================
-# ================= CHECKOUT PAGE ============================
-# ============================================================
 
-if st.session_state.page == "checkout":
+# ========================= CHECKOUT PAGE =========================
+elif st.session_state.page == "checkout":
 
-    st.title("🧾 Checkout Page")
+    st.title("🧾 Checkout")
+
+    if st.button("⬅ Back to Shop"):
+        st.session_state.page = "shop"
 
     customer_name = st.text_input("Customer Name")
     customer_whatsapp = st.text_input("Customer WhatsApp Number")
 
     total = sum(item["total_price"] for item in st.session_state.cart)
 
-    st.subheader(f"Final Amount: ₹{total}")
+    st.subheader(f"Total Amount: ₹{total}")
 
-    if st.button("✅ Place Order Now"):
+    if st.button("✅ Confirm & Place Order"):
 
         if not customer_name or not customer_whatsapp:
-            st.warning("Please fill all details before placing order.")
+            st.warning("Please fill all details.")
         else:
 
             pdf_file = generate_pdf(
@@ -243,41 +246,40 @@ if st.session_state.page == "checkout":
             )
 
             success = send_order_email(
-                st.session_state.cart,
-                total,
-                pdf_file,
-                customer_name,
-                customer_whatsapp,
+                st.session_state.cart, total, pdf_file, customer_name, customer_whatsapp
             )
 
             if success:
 
-                st.success("🎉 Your Order is Placed Successfully!")
-                st.info("Please also confirm your order on WhatsApp.")
-
-                business_number = "917417866405"
-
-                message = f"""
-🛍 Order Placed
-
-Name: {customer_name}
-Mobile: {customer_whatsapp}
-Total Amount: ₹{total}
-
-Please confirm the order.
-"""
-
-                encoded = urllib.parse.quote(message)
-                whatsapp_url = f"https://api.whatsapp.com/send?phone={business_number}&text={encoded}"
-
-                st.markdown(
-                    f'<a href="{whatsapp_url}" target="_blank">'
-                    f'<button style="background-color:#25D366;color:white;'
-                    f'padding:12px 25px;border:none;border-radius:6px;font-size:16px;">'
-                    f"Send Order on WhatsApp"
-                    f"</button></a>",
-                    unsafe_allow_html=True,
-                )
+                st.session_state.page = "success"
 
                 st.session_state.cart = []
                 local_storage.deleteItem("cart")
+
+
+# ========================= SUCCESS PAGE =========================
+elif st.session_state.page == "success":
+
+    st.success("🎉 Your Order is Placed Successfully!")
+    st.info("Please send order confirmation on WhatsApp.")
+
+    business_number = "917417866405"
+
+    message = "I have placed the order. Please check."
+
+    encoded = urllib.parse.quote(message)
+    whatsapp_url = (
+        f"https://api.whatsapp.com/send?phone={business_number}&text={encoded}"
+    )
+
+    st.markdown(
+        f'<a href="{whatsapp_url}" target="_blank">'
+        f'<button style="background-color:#25D366;color:white;'
+        f'padding:14px 30px;border:none;border-radius:8px;font-size:18px;">'
+        f"Send Confirmation on WhatsApp"
+        f"</button></a>",
+        unsafe_allow_html=True,
+    )
+
+    if st.button("🏠 Back to Shop"):
+        st.session_state.page = "shop"
