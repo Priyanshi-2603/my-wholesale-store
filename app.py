@@ -33,7 +33,7 @@ if "page" not in st.session_state:
 # ---------------- UPDATE CART FUNCTION ----------------
 def update_cart(product_name, size, price, dozens, image):
 
-    # Remove existing same product+size
+    # Remove same product+size first
     st.session_state.cart = [
         item
         for item in st.session_state.cart
@@ -166,7 +166,6 @@ if st.session_state.page == "shop":
     for sub_name, products in products_by_sub.items():
 
         st.markdown(f"### {sub_name}")
-
         cols = st.columns(2)
         idx = 0
 
@@ -195,7 +194,11 @@ if st.session_state.page == "shop":
                     def quantity_changed(product=p, size=size, price=price):
                         dozens_value = st.session_state[input_key]
                         update_cart(
-                            product["name"], size, price, dozens_value, product["image"]
+                            product["name"],
+                            size,
+                            price,
+                            dozens_value,
+                            product["image"],
                         )
 
                     dozens = st.number_input(
@@ -236,6 +239,25 @@ elif st.session_state.page == "checkout":
         st.warning("Your cart is empty.")
         st.stop()
 
+    st.markdown("### 🛒 Order Summary")
+
+    for item in st.session_state.cart:
+        col1, col2 = st.columns([1, 2])
+
+        with col1:
+            if item.get("image"):
+                st.image(item["image"], width=120)
+
+        with col2:
+            st.markdown(
+                f"""
+            **{item['product']}**
+            - Size: {item['size']}
+            - Quantity: {item['dozens']} dozen ({item['quantity']} pcs)
+            - Total: ₹{item['total_price']}
+            """
+            )
+
     customer_name = st.text_input("Customer Name")
     customer_whatsapp = st.text_input("Customer WhatsApp Number")
 
@@ -248,11 +270,18 @@ elif st.session_state.page == "checkout":
         else:
 
             pdf_file = generate_pdf(
-                st.session_state.cart, total, customer_name, customer_whatsapp
+                st.session_state.cart,
+                total,
+                customer_name,
+                customer_whatsapp,
             )
 
             success = send_order_email(
-                st.session_state.cart, total, pdf_file, customer_name, customer_whatsapp
+                st.session_state.cart,
+                total,
+                pdf_file,
+                customer_name,
+                customer_whatsapp,
             )
 
             if success:
@@ -267,7 +296,6 @@ elif st.session_state.page == "success":
     st.info("Please send confirmation on WhatsApp.")
 
     business_number = "917417866405"
-
     message = "I have placed the order. Please check."
     encoded = urllib.parse.quote(message)
     whatsapp_url = (
@@ -276,19 +304,19 @@ elif st.session_state.page == "success":
 
     st.markdown(
         f"""
-    <a href="{whatsapp_url}" target="_blank">
-        <button style="
-            background-color:#25D366;
-            color:white;
-            padding:14px 30px;
-            border:none;
-            border-radius:8px;
-            font-size:18px;
-            cursor:pointer;">
-            Send Confirmation on WhatsApp
-        </button>
-    </a>
-    """,
+        <a href="{whatsapp_url}" target="_blank">
+            <button style="
+                background-color:#25D366;
+                color:white;
+                padding:14px 30px;
+                border:none;
+                border-radius:8px;
+                font-size:18px;
+                cursor:pointer;">
+                Send Confirmation on WhatsApp
+            </button>
+        </a>
+        """,
         unsafe_allow_html=True,
     )
 
