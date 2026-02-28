@@ -101,7 +101,7 @@ for sub_name, products in products_by_sub.items():
             # Show image (URL supported)
             img_url = p.get("image", "")
             if img_url:
-                st.image(img_url, use_column_width=True)
+                st.image(img_url, width="stretch")
 
             prices = p.get("prices", {})
 
