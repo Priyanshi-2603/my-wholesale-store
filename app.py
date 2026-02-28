@@ -4,19 +4,20 @@ import urllib.parse
 from streamlit_local_storage import LocalStorage
 import io
 import requests
+import base64
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
 from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import getSampleStyleSheet
 import sib_api_v3_sdk
 from sib_api_v3_sdk.rest import ApiException
-import base64
 
+# ---------------- PAGE CONFIG ----------------
 st.set_page_config(
     page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide"
 )
 
-# ---------------- LOAD PRODUCT DATA ----------------
+# ---------------- LOAD PRODUCTS ----------------
 with open("products.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
@@ -39,6 +40,7 @@ def add_to_cart(product_name, size, price, dozens, image):
         "total_price": price * 12 * dozens,
         "image": image,
     }
+
     st.session_state.cart.append(item)
     local_storage.setItem("cart", json.dumps(st.session_state.cart))
 
@@ -48,15 +50,14 @@ st.title("🛍 Shri Girraj Mukut Shringar Kendra Product Catalogue")
 
 category = st.selectbox("Select Category", list(data.keys()))
 subcategory_list = list(data[category].keys())
-subcategory = st.selectbox("Select Subcategory", ["All"] + subcategory_list)
+subcategory_options = ["All"] + subcategory_list
+subcategory = st.selectbox("Select Subcategory", subcategory_options)
 
-products_by_sub = (
-    {k: v for k, v in data[category].items()}
-    if subcategory == "All"
-    else {subcategory: data[category].get(subcategory, [])}
-)
+if subcategory == "All":
+    products_by_sub = {k: v for k, v in data[category].items()}
+else:
+    products_by_sub = {subcategory: data[category].get(subcategory, [])}
 
-st.write("---")
 search = st.text_input("🔍 Search Product Name")
 
 for sub_name, products in products_by_sub.items():
@@ -65,6 +66,7 @@ for sub_name, products in products_by_sub.items():
     idx = 0
 
     for p in products:
+
         if search and search.lower() not in p.get("name", "").lower():
             continue
 
@@ -78,14 +80,16 @@ for sub_name, products in products_by_sub.items():
 
             prices = p.get("prices", {})
             if prices:
+
                 unique_key = f"{category}_{sub_name}_{p['id']}"
 
                 size = st.selectbox(
-                    "Select Size", list(prices.keys()), key=f"size_{unique_key}"
+                    "Select Size",
+                    list(prices.keys()),
+                    key=f"size_{unique_key}",
                 )
 
                 price = prices[size]
-                st.write(f"💵 Price per piece: ₹{price}")
 
                 dozens = st.number_input(
                     "Select Quantity (in dozens)",
@@ -95,9 +99,6 @@ for sub_name, products in products_by_sub.items():
                     key=f"dozen_{unique_key}",
                 )
 
-                st.write(f"Total Pieces: {dozens * 12}")
-                st.write(f"Total Price: ₹{price * 12 * dozens}")
-
                 if st.button("Add to Cart", key=f"btn_{unique_key}"):
                     add_to_cart(p["name"], size, price, dozens, img_url)
                     st.success("Added to cart ✅")
@@ -106,7 +107,7 @@ for sub_name, products in products_by_sub.items():
 
 
 # ---------------- PDF GENERATION ----------------
-def generate_pdf(cart_items, total_amount):
+def generate_pdf(cart_items, total_amount, name, whatsapp):
 
     buffer = io.BytesIO()
     doc = SimpleDocTemplate(buffer, pagesize=A4)
@@ -115,13 +116,14 @@ def generate_pdf(cart_items, total_amount):
 
     elements.append(Paragraph("Shri Girraj Mukut Shringar Kendra", styles["Heading1"]))
     elements.append(Spacer(1, 12))
-    elements.append(Paragraph("Order Summary", styles["Heading2"]))
+
+    elements.append(Paragraph(f"Customer Name: {name}", styles["Normal"]))
+    elements.append(Paragraph(f"WhatsApp: {whatsapp}", styles["Normal"]))
     elements.append(Spacer(1, 12))
 
     for item in cart_items:
-        elements.append(
-            Paragraph(f"<b>Product:</b> {item['product']}", styles["Normal"])
-        )
+
+        elements.append(Paragraph(f"Product: {item['product']}", styles["Normal"]))
         elements.append(Paragraph(f"Size: {item['size']}", styles["Normal"]))
         elements.append(
             Paragraph(
@@ -142,9 +144,7 @@ def generate_pdf(cart_items, total_amount):
 
         elements.append(Spacer(1, 20))
 
-    elements.append(
-        Paragraph(f"<b>Final Amount: ₹{total_amount}</b>", styles["Heading2"])
-    )
+    elements.append(Paragraph(f"Final Amount: ₹{total_amount}", styles["Heading2"]))
     doc.build(elements)
     buffer.seek(0)
     return buffer
@@ -162,7 +162,7 @@ def send_order_email(cart_items, total_amount, pdf_buffer, name, whatsapp):
 
     html_content = f"""
     <h2>New Order Received</h2>
-    <p><b>Customer Name:</b> {name}</p>
+    <p><b>Name:</b> {name}</p>
     <p><b>WhatsApp:</b> {whatsapp}</p>
     <hr>
     """
@@ -170,11 +170,11 @@ def send_order_email(cart_items, total_amount, pdf_buffer, name, whatsapp):
     for item in cart_items:
         html_content += f"""
         <div>
-            <img src="{item['image']}" width="150"><br>
-            <b>Product:</b> {item['product']}<br>
-            <b>Size:</b> {item['size']}<br>
-            <b>Quantity:</b> {item['dozens']} dozen ({item['quantity']} pcs)<br>
-            <b>Total:</b> ₹{item['total_price']}<br><br>
+            <img src="{item['image']}" width="120"><br>
+            <b>{item['product']}</b><br>
+            Size: {item['size']}<br>
+            Qty: {item['dozens']} dozen ({item['quantity']} pcs)<br>
+            Total: ₹{item['total_price']}<br><br>
         </div>
         """
 
@@ -185,7 +185,7 @@ def send_order_email(cart_items, total_amount, pdf_buffer, name, whatsapp):
     send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(
         to=[{"email": st.secrets["RECEIVER_EMAIL"]}],
         sender={"email": st.secrets["SENDER_EMAIL"]},
-        subject="New Order - Shri Girraj Mukut Shringar Kendra",
+        subject="New Order Received",
         html_content=html_content,
         attachment=[{"content": pdf_base64, "name": "order_summary.pdf"}],
     )
@@ -198,79 +198,66 @@ def send_order_email(cart_items, total_amount, pdf_buffer, name, whatsapp):
         return False
 
 
-# ================= CUSTOMER DETAILS =================
+# ---------------- CUSTOMER DETAILS ----------------
 st.subheader("🧾 Customer Details")
 customer_name = st.text_input("Customer Name")
-customer_whatsapp = st.text_input("Customer WhatsApp Number (with country code)")
+customer_whatsapp = st.text_input("Customer WhatsApp Number")
 
-# ================= CART SECTION =================
+# ---------------- CART SECTION ----------------
 st.header("🛒 Cart Summary")
 
 total = sum(item["total_price"] for item in st.session_state.cart)
 
 if total > 0:
 
-    pdf_file = generate_pdf(st.session_state.cart, total)
-
-    if st.button("📄 Download PDF & Send Order to Email"):
+    if st.button("📄 Place Order"):
 
         if not customer_name or not customer_whatsapp:
-            st.warning("Please enter customer name and WhatsApp number.")
+            st.warning("Please enter your name and WhatsApp number.")
         else:
+
+            pdf_file = generate_pdf(
+                st.session_state.cart, total, customer_name, customer_whatsapp
+            )
+
             success = send_order_email(
-                st.session_state.cart, total, pdf_file, customer_name, customer_whatsapp
+                st.session_state.cart,
+                total,
+                pdf_file,
+                customer_name,
+                customer_whatsapp,
             )
 
             if success:
-                st.success("✅ Order Sent to Email Successfully!")
 
+                st.session_state.cart = []
+                local_storage.deleteItem("cart")
+
+                st.success("🎉 Thank you for your order!")
+                st.info("We will contact you soon on WhatsApp.")
+
+                # WhatsApp Redirect
                 business_number = "917417866405"
 
-                confirmation_msg = f"""
-🛍 *New Order Received*
+                message = f"""
+🛍 Order Placed Successfully
 
-👤 Customer Name: {customer_name}
-📱 Customer WhatsApp: {customer_whatsapp}
+Name: {customer_name}
+Mobile: {customer_whatsapp}
+Total Amount: ₹{total}
 
+Please confirm the order.
 """
 
-                for item in st.session_state.cart:
-                    confirmation_msg += f"""
-📦 {item['product']}
-Size: {item['size']}
-Qty: {item['dozens']} dozen ({item['quantity']} pcs)
-Amount: ₹{item['total_price']}
-
-"""
-
-                confirmation_msg += f"""
-💰 *Final Amount:* ₹{total}
-"""
-
-                encoded_msg = urllib.parse.quote(confirmation_msg)
-                whatsapp_url = f"https://wa.me/{business_number}?text={encoded_msg}"
+                encoded_message = urllib.parse.quote(message)
+                whatsapp_url = f"https://wa.me/{business_number}?text={encoded_message}"
 
                 st.markdown(
-                    f'<a href="{whatsapp_url}" target="_blank">'
-                    f'<button style="background-color:green;color:white;padding:12px 25px;'
-                    f'border:none;border-radius:6px;font-size:16px;">'
-                    f"Send Order on WhatsApp</button></a>",
+                    f'<meta http-equiv="refresh" content="2;url={whatsapp_url}">',
                     unsafe_allow_html=True,
                 )
 
-    st.download_button(
-        label="⬇ Download Only PDF",
-        data=pdf_file,
-        file_name="order_summary.pdf",
-        mime="application/pdf",
-    )
-
     st.subheader(f"💰 Final Amount: ₹{total}")
-
-    if st.button("✅ Clear Cart After Order"):
-        st.session_state.cart = []
-        local_storage.deleteItem("cart")
-        st.success("Cart Cleared Successfully 🎉")
 
 else:
     st.info("Your cart is empty.")
