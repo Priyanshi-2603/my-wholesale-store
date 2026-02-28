@@ -155,18 +155,26 @@ if st.session_state.page == "shop":
     # ---------- TOP CART BAR ----------
     total = sum(item["total_price"] for item in st.session_state.cart)
 
-    top_col1, top_col2 = st.columns([4, 1])
+    col1, col2, col3 = st.columns([4, 1.5, 1.5])
 
-    with top_col1:
+    with col1:
         if total > 0:
             st.markdown(f"### 🛒 Cart Total: ₹{total}")
         else:
             st.markdown("### 🛒 Cart is Empty")
 
-    with top_col2:
+    with col2:
         if total > 0:
-            if st.button(f"🛒 Checkout (₹{total})"):
+            if st.button(f"🛍 Place Order (₹{total})"):
                 st.session_state.page = "checkout"
+                st.rerun()
+
+    with col3:
+        if total > 0:
+            if st.button("❌ Clear Cart"):
+                st.session_state.cart = []
+                local_storage.deleteItem("cart")
+                st.success("Cart Cleared Successfully")
                 st.rerun()
 
     st.markdown("---")
