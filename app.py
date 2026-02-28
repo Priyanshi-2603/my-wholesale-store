@@ -152,7 +152,24 @@ def send_order_email(cart_items, total, pdf_buffer, name, whatsapp):
 if st.session_state.page == "shop":
 
     st.title("🛍 Shri Girraj Mukut Shringar Kendra")
+    # ---------- TOP CART BAR ----------
+    total = sum(item["total_price"] for item in st.session_state.cart)
 
+    top_col1, top_col2 = st.columns([4, 1])
+
+    with top_col1:
+        if total > 0:
+            st.markdown(f"### 🛒 Cart Total: ₹{total}")
+        else:
+            st.markdown("### 🛒 Cart is Empty")
+
+    with top_col2:
+        if total > 0:
+            if st.button("🛒 Place Order"):
+                st.session_state.page = "checkout"
+                st.rerun()
+
+    st.markdown("---")
     category = st.selectbox("Select Category", list(data.keys()))
     subcategory_list = list(data[category].keys())
     subcategory = st.selectbox("Select Subcategory", ["All"] + subcategory_list)
@@ -208,11 +225,11 @@ if st.session_state.page == "shop":
             idx += 1
 
     # Floating Place Order Button
-    if len(st.session_state.cart) > 0:
-        st.markdown("---")
-        if st.button("🛒 Place Order"):
-            st.session_state.page = "checkout"
-            st.rerun()
+    # if len(st.session_state.cart) > 0:
+    #     st.markdown("---")
+    #     if st.button("🛒 Place Order"):
+    #         st.session_state.page = "checkout"
+    #         st.rerun()
 
 
 # ============================================================
