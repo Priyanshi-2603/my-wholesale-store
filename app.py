@@ -194,7 +194,7 @@ def generate_pdf(cart_items, total_amount):
     return buffer
 
 
-def send_order_email(cart_items, total_amount, pdf_buffer):
+def send_order_email(cart_items, total_amount, pdf_buffer, name, whatsapp):
 
     configuration = sib_api_v3_sdk.Configuration()
     configuration.api_key["api-key"] = st.secrets["BREVO_API_KEY"]
@@ -203,7 +203,12 @@ def send_order_email(cart_items, total_amount, pdf_buffer):
         sib_api_v3_sdk.ApiClient(configuration)
     )
 
-    html_content = "<h2>New Order Received</h2><br>"
+    html_content = f"""
+    <h2>New Order Received</h2>
+    <p><b>Customer Name:</b> {name}</p>
+    <p><b>WhatsApp:</b> {whatsapp}</p>
+    <hr>
+    """
 
     for item in cart_items:
         html_content += f"""
@@ -239,6 +244,12 @@ def send_order_email(cart_items, total_amount, pdf_buffer):
         return False
 
 
+# ================= CUSTOMER DETAILS =================
+st.subheader("🧾 Customer Details")
+
+customer_name = st.text_input("Customer Name")
+customer_whatsapp = st.text_input("Customer WhatsApp Number (with country code)")
+
 # ================= CART SECTION =================
 st.header("🛒 Cart Summary")
 
@@ -251,13 +262,43 @@ if total > 0:
 
     pdf_file = generate_pdf(st.session_state.cart, total)
 
+    # ✅ SEND ORDER BUTTON
     if st.button("📄 Download PDF & Send Order to Email"):
 
-        success = send_order_email(st.session_state.cart, total, pdf_file)
+        if not customer_name or not customer_whatsapp:
+            st.warning("Please enter customer name and WhatsApp number.")
+        else:
+            success = send_order_email(
+                st.session_state.cart, total, pdf_file, customer_name, customer_whatsapp
+            )
 
-        if success:
-            st.success("✅ Order Sent to Email Successfully!")
+            if success:
+                st.success("✅ Order Sent to Email Successfully!")
 
+                # ✅ WhatsApp Confirmation Message
+                confirmation_msg = f"""
+Hello {customer_name},
+
+Thank you for placing your order with Shri Girraj Mukut Shringar Kendra 🙏
+
+Your total order amount is ₹{total}.
+We will contact you shortly for confirmation.
+
+Thank you!
+"""
+
+                encoded_msg = urllib.parse.quote(confirmation_msg)
+                whatsapp_url = f"https://wa.me/{customer_whatsapp}?text={encoded_msg}"
+
+                st.markdown(
+                    f'<a href="{whatsapp_url}" target="_blank">'
+                    f'<button style="background-color:green;color:white;padding:10px 20px;'
+                    f'border:none;border-radius:5px;font-size:16px;">'
+                    f"Send Confirmation on WhatsApp</button></a>",
+                    unsafe_allow_html=True,
+                )
+
+    # ✅ Download Only PDF Button
     st.download_button(
         label="⬇ Download Only PDF",
         data=pdf_file,
@@ -268,7 +309,7 @@ if total > 0:
     st.subheader(f"💰 Final Amount: ₹{total}")
     st.write("🚚 Delivery Charges Not Included")
 
-    # Clear cart button
+    # ✅ Clear cart button
     if st.button("✅ Clear Cart After Order"):
         st.session_state.cart = []
         local_storage.deleteItem("cart")
