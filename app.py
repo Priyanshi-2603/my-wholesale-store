@@ -15,8 +15,7 @@ from reportlab.lib.pagesizes import A4
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
-    page_title="Shri Girraj Mukut Shringar Kendra Mathura",
-    layout="wide"
+    page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide"
 )
 
 # ---------------- LOAD PRODUCTS ----------------
@@ -36,7 +35,8 @@ def update_cart(product_name, size, price, dozens, image):
 
     # Remove existing same product+size
     st.session_state.cart = [
-        item for item in st.session_state.cart
+        item
+        for item in st.session_state.cart
         if not (item["product"] == product_name and item["size"] == size)
     ]
 
@@ -68,12 +68,14 @@ def generate_pdf(cart_items, total, name, whatsapp):
 
     for item in cart_items:
 
-        elements.append(Paragraph(f"<b>Product:</b> {item['product']}", styles["Normal"]))
+        elements.append(
+            Paragraph(f"<b>Product:</b> {item['product']}", styles["Normal"])
+        )
         elements.append(Paragraph(f"Size: {item['size']}", styles["Normal"]))
         elements.append(
             Paragraph(
                 f"Quantity: {item['dozens']} dozen ({item['quantity']} pcs)",
-                styles["Normal"]
+                styles["Normal"],
             )
         )
         elements.append(Paragraph(f"Total: ₹{item['total_price']}", styles["Normal"]))
@@ -184,9 +186,7 @@ if st.session_state.page == "shop":
                 if prices:
 
                     size = st.selectbox(
-                        "Select Size",
-                        list(prices.keys()),
-                        key=f"{p['id']}_size"
+                        "Select Size", list(prices.keys()), key=f"{p['id']}_size"
                     )
 
                     price = prices[size]
@@ -195,11 +195,7 @@ if st.session_state.page == "shop":
                     def quantity_changed(product=p, size=size, price=price):
                         dozens_value = st.session_state[input_key]
                         update_cart(
-                            product["name"],
-                            size,
-                            price,
-                            dozens_value,
-                            product["image"]
+                            product["name"], size, price, dozens_value, product["image"]
                         )
 
                     dozens = st.number_input(
@@ -208,7 +204,7 @@ if st.session_state.page == "shop":
                         value=0,
                         step=1,
                         key=input_key,
-                        on_change=quantity_changed
+                        on_change=quantity_changed,
                     )
 
                     if dozens > 0:
@@ -252,13 +248,11 @@ elif st.session_state.page == "checkout":
         else:
 
             pdf_file = generate_pdf(
-                st.session_state.cart, total,
-                customer_name, customer_whatsapp
+                st.session_state.cart, total, customer_name, customer_whatsapp
             )
 
             success = send_order_email(
-                st.session_state.cart, total,
-                pdf_file, customer_name, customer_whatsapp
+                st.session_state.cart, total, pdf_file, customer_name, customer_whatsapp
             )
 
             if success:
@@ -276,14 +270,25 @@ elif st.session_state.page == "success":
 
     message = "I have placed the order. Please check."
     encoded = urllib.parse.quote(message)
-    whatsapp_url = f"https://api.whatsapp.com/send?phone={business_number}&text={encoded}"
+    whatsapp_url = (
+        f"https://api.whatsapp.com/send?phone={business_number}&text={encoded}"
+    )
 
     st.markdown(
-        f'<a href="{whatsapp_url}" target="_blank">'
-        f'<button style="background-color:#25D366;color:white;'
-        f'padding:14px 30px;border:none;border-radius:8px;font-size:18px;">'
-        f"Send Confirmation on WhatsApp"
-        f"</button></a>',
+        f"""
+    <a href="{whatsapp_url}" target="_blank">
+        <button style="
+            background-color:#25D366;
+            color:white;
+            padding:14px 30px;
+            border:none;
+            border-radius:8px;
+            font-size:18px;
+            cursor:pointer;">
+            Send Confirmation on WhatsApp
+        </button>
+    </a>
+    """,
         unsafe_allow_html=True,
     )
 
