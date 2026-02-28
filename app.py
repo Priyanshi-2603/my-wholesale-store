@@ -36,6 +36,14 @@ if "cart" not in st.session_state:
 
 # ---------------- ADD TO CART ----------------
 def add_to_cart(product_name, size, price, dozens, image):
+
+    # Remove same product+size first
+    st.session_state.cart = [
+        item
+        for item in st.session_state.cart
+        if not (item["product"] == product_name and item["size"] == size)
+    ]
+
     item = {
         "product": product_name,
         "size": size,
@@ -47,6 +55,9 @@ def add_to_cart(product_name, size, price, dozens, image):
 
     st.session_state.cart.append(item)
     local_storage.setItem("cart", json.dumps(st.session_state.cart))
+
+    # Save last added product name
+    st.session_state.last_added = product_name
 
 
 # ---------------- PDF GENERATION ----------------
@@ -152,6 +163,12 @@ def send_order_email(cart_items, total, pdf_buffer, name, whatsapp):
 if st.session_state.page == "shop":
 
     st.title("🛍 Shri Girraj Mukut Shringar Kendra")
+
+    # Show success message once
+    if "last_added" in st.session_state:
+        st.success(f"✅ {st.session_state.last_added} added to cart successfully!")
+        del st.session_state.last_added
+
     # ---------- TOP CART BAR ----------
     total = sum(item["total_price"] for item in st.session_state.cart)
 
