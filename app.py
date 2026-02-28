@@ -165,7 +165,7 @@ if st.session_state.page == "shop":
 
     with top_col2:
         if total > 0:
-            if st.button("🛒 Place Order"):
+            if st.button(f"🛒 Checkout (₹{total})"):
                 st.session_state.page = "checkout"
                 st.rerun()
 
