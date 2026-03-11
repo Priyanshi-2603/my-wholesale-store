@@ -259,7 +259,7 @@ if st.session_state.page == "shop":
                         key=f"{p['id']}_{idx}_qty",
                     )
 
-                    st.write(f"Total Price: ₹{price * 12 * dozens}")
+                    # st.write(f"Total Price: ₹{price * 12 * dozens}")
 
                     if st.button("Add to Cart", key=f"add_{p['id']}_{idx}"):
                         add_to_cart(p["id"], p["name"], size, price, dozens, p["image"])
