@@ -214,7 +214,7 @@ if st.session_state.page == "shop":
     for sub_name, products in products_by_sub.items():
 
         st.markdown(f"### {sub_name}")
-        cols = st.columns(2)
+        cols = st.columns(3)
         idx = 0
 
         for p in products:
@@ -227,7 +227,7 @@ if st.session_state.page == "shop":
                 st.markdown(f"### {p['name']}")
 
                 if p.get("image"):
-                    st.image(p["image"], use_container_width="stretch")
+                    st.image(p["image"], use_container_width="True")
 
                 prices = p.get("prices", {})
                 if prices:
