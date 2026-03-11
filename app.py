@@ -227,13 +227,13 @@ if st.session_state.page == "shop":
                 st.markdown(f"### {p['name']}")
 
                 if p.get("image"):
-                    st.image(p["image"], width="stretch")
+                    st.image(p["image"], use_container_width="stretch")
 
                 prices = p.get("prices", {})
                 if prices:
 
                     size = st.selectbox(
-                        "Select Size", list(prices.keys()), key=f"{p['id']}_size"
+                        "Select Size", list(prices.keys()), key=f"{p['id']}_{idx}_size"
                     )
 
                     price = prices[size]
@@ -242,12 +242,12 @@ if st.session_state.page == "shop":
                         "Select Quantity (dozens)",
                         min_value=1,
                         value=1,
-                        key=f"{p['id']}_qty",
+                        key=f"{p['id']}_{idx}_qty",
                     )
 
                     st.write(f"Total Price: ₹{price * 12 * dozens}")
 
-                    if st.button("Add to Cart", key=f"add_{p['id']}"):
+                    if st.button("Add to Cart", key=f"add_{p['id']}_{idx}"):
                         add_to_cart(p["id"], p["name"], size, price, dozens, p["image"])
                         st.success("Added to cart ✅")
                         st.rerun()
