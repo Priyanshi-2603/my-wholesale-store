@@ -53,7 +53,7 @@ if "added_product" not in st.session_state:
 
 
 # ---------------- ADD TO CART ----------------
-def add_to_cart(product_id, product_name, size, price, dozens, image):
+def add_to_cart(product_id, product_name, size, price, qty, image, unit):
 
     # Remove same product+size first
     st.session_state.cart = [
@@ -62,12 +62,15 @@ def add_to_cart(product_id, product_name, size, price, dozens, image):
         if not (item["product"] == product_name and item["size"] == size)
     ]
 
+    quantity = qty * unit
+    total_price = price * unit * qty
+
     item = {
         "product": product_name,
         "size": size,
-        "dozens": dozens,
-        "quantity": dozens * 12,
-        "total_price": price * 12 * dozens,
+        "dozens": qty,
+        "quantity": quantity,
+        "total_price": total_price,
         "image": image,
     }
 
@@ -259,10 +262,14 @@ if st.session_state.page == "shop":
                         key=f"{p['id']}_{idx}_qty",
                     )
 
-                    # st.write(f"Total Price: ₹{price * 12 * dozens}")
+                    unit = p.get("unit", 12)
+                    st.write(f"Total Price: ₹{price * unit * dozens}")
 
                     if st.button("Add to Cart", key=f"add_{p['id']}_{idx}"):
-                        add_to_cart(p["id"], p["name"], size, price, dozens, p["image"])
+                        unit = p.get("unit", 12)
+                        add_to_cart(
+                            p["id"], p["name"], size, price, dozens, p["image"], unit
+                        )
                         st.success("Added to cart ✅")
                         st.rerun()
 
