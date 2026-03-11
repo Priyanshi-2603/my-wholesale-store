@@ -214,7 +214,7 @@ if st.session_state.page == "shop":
     for sub_name, products in products_by_sub.items():
 
         st.markdown(f"### {sub_name}")
-        cols = st.columns(3)
+        cols = st.columns(2)
         idx = 0
 
         for p in products:
