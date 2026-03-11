@@ -18,6 +18,20 @@ st.set_page_config(
     page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide"
 )
 
+st.markdown(
+    """
+<style>
+.sticky-cart {
+position: fixed;
+bottom: 20px;
+right: 20px;
+z-index: 999;
+}
+</style>
+""",
+    unsafe_allow_html=True,
+)
+
 # ---------------- SESSION PAGE CONTROL ----------------
 if "page" not in st.session_state:
     st.session_state.page = "shop"
@@ -264,6 +278,29 @@ if st.session_state.page == "shop":
     #     if st.button("🛒 Place Order"):
     #         st.session_state.page = "checkout"
     #         st.rerun()
+    if len(st.session_state.cart) > 0:
+
+        total = sum(item["total_price"] for item in st.session_state.cart)
+
+        st.markdown(
+            f"""
+            <div class="sticky-cart">
+                <a href="?page=checkout">
+                    <button style="
+                    background-color:#ff4b4b;
+                    color:white;
+                    padding:15px 25px;
+                    font-size:18px;
+                    border:none;
+                    border-radius:10px;
+                    cursor:pointer;">
+                    🛒 Checkout ₹{total}
+                    </button>
+                </a>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
 
 # ============================================================
