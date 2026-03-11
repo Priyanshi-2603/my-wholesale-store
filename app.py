@@ -41,12 +41,19 @@ with open("products.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 local_storage = LocalStorage()
+
 if "cart_loaded" not in st.session_state:
+
     saved_cart = local_storage.getItem("cart")
+
     if saved_cart:
-        st.session_state.cart = json.loads(saved_cart)
+        try:
+            st.session_state.cart = json.loads(saved_cart)
+        except:
+            st.session_state.cart = []
     else:
         st.session_state.cart = []
+
     st.session_state.cart_loaded = True
 
 # ---------------- LOAD CART ----------------
@@ -219,7 +226,7 @@ if st.session_state.page == "shop":
         if total > 0:
             if st.button("❌ Clear Cart"):
                 st.session_state.cart = []
-                local_storage.deleteItem("cart")
+                local_storage.setItem("cart", json.dumps([]))
                 st.success("Cart Cleared Successfully")
                 st.rerun()
 
