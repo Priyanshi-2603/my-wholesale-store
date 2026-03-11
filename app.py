@@ -50,14 +50,6 @@ if "cart_loaded" not in st.session_state:
     st.session_state.cart_loaded = True
 
 # ---------------- LOAD CART ----------------
-saved_cart = local_storage.getItem("cart")
-
-if saved_cart:
-    st.session_state.cart = json.loads(saved_cart)
-else:
-    if "cart" not in st.session_state:
-        st.session_state.cart = []
-
 
 # if "cart" not in st.session_state:
 #     saved_cart = local_storage.getItem("cart")
@@ -260,7 +252,7 @@ if st.session_state.page == "shop":
                 st.markdown(f"### {p['name']}")
 
                 if p.get("image"):
-                    st.image(p["image"], use_container_width="True")
+                    st.image(p["image"], use_container_width=True)
 
                 prices = p.get("prices", {})
                 if prices:
