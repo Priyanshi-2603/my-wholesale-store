@@ -72,7 +72,7 @@ def load_products():
 
     grouped = df.groupby(["category", "subcategory", "name", "image", "unit", "id"])
 
-    for (cat, sub, name), group in grouped:
+    for (cat, sub, name, image, unit, pid), group in grouped:
 
         first = group.iloc[0]
 
