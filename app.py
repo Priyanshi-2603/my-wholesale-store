@@ -1,6 +1,7 @@
 import streamlit as st
 import json
 import urllib.parse
+import pandas as pd
 
 # from streamlit_local_storage import LocalStorage
 import io
