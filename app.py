@@ -42,19 +42,22 @@ with open("products.json", "r", encoding="utf-8") as f:
 
 local_storage = LocalStorage()
 
-if "cart_loaded" not in st.session_state:
+# ---------------- LOAD CART FROM LOCAL STORAGE ----------------
+if "cart" not in st.session_state:
 
     saved_cart = local_storage.getItem("cart")
 
-    if saved_cart:
-        try:
-            st.session_state.cart = json.loads(saved_cart)
-        except:
-            st.session_state.cart = []
-    else:
+    if saved_cart is None:
         st.session_state.cart = []
 
-    st.session_state.cart_loaded = True
+    else:
+        try:
+            if isinstance(saved_cart, str):
+                st.session_state.cart = json.loads(saved_cart)
+            else:
+                st.session_state.cart = saved_cart
+        except:
+            st.session_state.cart = []
 
 # ---------------- LOAD CART ----------------
 
