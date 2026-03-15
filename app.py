@@ -82,7 +82,8 @@ def add_to_cart(product_id, product_name, size, price, qty, image, unit):
     st.session_state.cart = [
         item
         for item in st.session_state.cart
-        if not (item["product"] == product_name and item["size"] == size)
+        if isinstance(item, dict)
+        and not (item.get("product") == product_name and item.get("size") == size)
     ]
 
     quantity = qty * unit
