@@ -334,45 +334,45 @@ if st.session_state.page == "shop":
             unsafe_allow_html=True,
         )
 
-if len(st.session_state.cart) > 0:
+# if len(st.session_state.cart) > 0:
 
-    st.subheader("🛒 Your Cart")
+#     st.subheader("🛒 Your Cart")
 
-    for i, item in enumerate(st.session_state.cart):
+#     for i, item in enumerate(st.session_state.cart):
 
-        col1, col2, col3, col4 = st.columns([1.5, 1, 1, 1])
+#         col1, col2, col3, col4 = st.columns([1.5, 1, 1, 1])
 
-        with col1:
-            st.write(f"**{item['product']}**")
-            st.write(f"Size: {item['size']}")
+#         with col1:
+#             st.write(f"**{item['product']}**")
+#             st.write(f"Size: {item['size']}")
 
-        with col2:
-            st.write(f"₹ {item['total_price']}")
+#         with col2:
+#             st.write(f"₹ {item['total_price']}")
 
-        with col3:
-            if st.button("➖", key=f"dec_{i}"):
+#         with col3:
+#             if st.button("➖", key=f"dec_{i}"):
 
-                if item["dozens"] > 1:
-                    item["dozens"] -= 1
-                    item["quantity"] -= 12
-                    item["total_price"] = (
-                        item["total_price"] / (item["dozens"] + 1) * item["dozens"]
-                    )
+#                 if item["dozens"] > 1:
+#                     item["dozens"] -= 1
+#                     item["quantity"] -= 12
+#                     item["total_price"] = (
+#                         item["total_price"] / (item["dozens"] + 1) * item["dozens"]
+#                     )
 
-                    st.query_params["cart"] = json.dumps(st.session_state.cart)
-                    st.rerun()
+#                     st.query_params["cart"] = json.dumps(st.session_state.cart)
+#                     st.rerun()
 
-        with col4:
-            if st.button("➕", key=f"inc_{i}"):
+#         with col4:
+#             if st.button("➕", key=f"inc_{i}"):
 
-                item["dozens"] += 1
-                item["quantity"] += 12
-                item["total_price"] = (
-                    item["total_price"] / (item["dozens"] - 1) * item["dozens"]
-                )
+#                 item["dozens"] += 1
+#                 item["quantity"] += 12
+#                 item["total_price"] = (
+#                     item["total_price"] / (item["dozens"] - 1) * item["dozens"]
+#                 )
 
-                st.query_params["cart"] = json.dumps(st.session_state.cart)
-                st.rerun()
+#                 st.query_params["cart"] = json.dumps(st.session_state.cart)
+#                 st.rerun()
 
 # ============================================================
 # ================= CHECKOUT PAGE ============================
@@ -390,6 +390,26 @@ if st.session_state.page == "checkout":
 
     customer_name = st.text_input("Customer Name")
     customer_whatsapp = st.text_input("Customer WhatsApp Number")
+
+    if len(st.session_state.cart) > 0:
+
+        st.subheader("🛒 Order Summary")
+
+        for item in st.session_state.cart:
+
+            col1, col2 = st.columns([1, 3])
+
+            with col1:
+                if item.get("image"):
+                    st.image(item["image"], width=120)
+
+            with col2:
+                st.write(f"**Product:** {item['product']}")
+                st.write(f"Size: {item['size']}")
+                st.write(f"Quantity: {item['dozens']} dozen ({item['quantity']} pcs)")
+                st.write(f"Total: ₹{item['total_price']}")
+
+            st.markdown("---")
 
     total = cart_total()
     st.subheader(f"Final Amount: ₹{total}")
