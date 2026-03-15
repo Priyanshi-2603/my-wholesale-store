@@ -1,6 +1,7 @@
 import streamlit as st
 import json
 import urllib.parse
+
 # from streamlit_local_storage import LocalStorage
 import io
 import requests
@@ -222,7 +223,9 @@ if st.session_state.page == "shop":
 
     with col3:
         if total > 0:
-            if st.button("❌ Clear Cart"):st.query_params["cart"] = json.dumps([])                st.session_state.cart = []
+            if st.button("❌ Clear Cart"):
+                st.query_params["cart"] = json.dumps([])
+                st.session_state.cart = []
                 st.query_params["cart"] = json.dumps([])
                 st.success("Cart Cleared Successfully")
                 st.rerun()
