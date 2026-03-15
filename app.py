@@ -70,7 +70,7 @@ def load_products():
 
     data = {}
 
-    grouped = df.groupby(["category", "subcategory", "name"])
+    grouped = df.groupby(["category", "subcategory", "name", "image", "unit", "id"])
 
     for (cat, sub, name), group in grouped:
 
