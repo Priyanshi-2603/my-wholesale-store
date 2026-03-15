@@ -52,7 +52,8 @@ with open("products.json", "r", encoding="utf-8") as f:
 
 
 # ---------------- LOAD CART FROM QUERY PARAM ----------------
-query_params = st.query_params
+# query_params = st.query_params
+query_params = dict(st.query_params)
 
 if "cart" not in st.session_state:
 
@@ -310,69 +311,18 @@ if st.session_state.page == "shop":
     #     if st.button("🛒 Place Order"):
     #         st.session_state.page = "checkout"
     #         st.rerun()
-    if len(st.session_state.cart) > 0:
+if len(st.session_state.cart) > 0:
 
-        total = cart_total()
+    total = cart_total()
 
-        st.markdown(
-            f"""
-            <div class="sticky-cart">
-                <a href="?page=checkout">
-                    <button style="
-                    background-color:#ff4b4b;
-                    color:white;
-                    padding:15px 25px;
-                    font-size:18px;
-                    border:none;
-                    border-radius:10px;
-                    cursor:pointer;">
-                    🛒 Checkout ₹{total}
-                    </button>
-                </a>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+    st.markdown('<div class="sticky-cart">', unsafe_allow_html=True)
 
-# if len(st.session_state.cart) > 0:
+    if st.button(f"🛒 Checkout ₹{total}"):
+        st.session_state.page = "checkout"
+        st.rerun()
 
-#     st.subheader("🛒 Your Cart")
+    st.markdown("</div>", unsafe_allow_html=True)
 
-#     for i, item in enumerate(st.session_state.cart):
-
-#         col1, col2, col3, col4 = st.columns([1.5, 1, 1, 1])
-
-#         with col1:
-#             st.write(f"**{item['product']}**")
-#             st.write(f"Size: {item['size']}")
-
-#         with col2:
-#             st.write(f"₹ {item['total_price']}")
-
-#         with col3:
-#             if st.button("➖", key=f"dec_{i}"):
-
-#                 if item["dozens"] > 1:
-#                     item["dozens"] -= 1
-#                     item["quantity"] -= 12
-#                     item["total_price"] = (
-#                         item["total_price"] / (item["dozens"] + 1) * item["dozens"]
-#                     )
-
-#                     st.query_params["cart"] = json.dumps(st.session_state.cart)
-#                     st.rerun()
-
-#         with col4:
-#             if st.button("➕", key=f"inc_{i}"):
-
-#                 item["dozens"] += 1
-#                 item["quantity"] += 12
-#                 item["total_price"] = (
-#                     item["total_price"] / (item["dozens"] - 1) * item["dozens"]
-#                 )
-
-#                 st.query_params["cart"] = json.dumps(st.session_state.cart)
-#                 st.rerun()
 
 # ============================================================
 # ================= CHECKOUT PAGE ============================
