@@ -1,28 +1,24 @@
 import streamlit as st
 import json
-from streamlit_local_storage import LocalStorage
 
 st.title("Cart Demo")
 
-local_storage = LocalStorage()
+# ---------------- LOAD CART ----------------
+query_params = st.query_params
 
-# ---------------- INIT CART ----------------
 if "cart" not in st.session_state:
-    st.session_state.cart = []
-
-# ---------------- LOAD CART FROM BROWSER ----------------
-saved_cart = local_storage.getItem("cart")
-
-if saved_cart and st.session_state.cart == []:
-    try:
-        st.session_state.cart = json.loads(saved_cart)
-    except:
+    if "cart" in query_params:
+        try:
+            st.session_state.cart = json.loads(query_params["cart"])
+        except:
+            st.session_state.cart = []
+    else:
         st.session_state.cart = []
 
 # ---------------- DISPLAY CART ----------------
 st.subheader("Cart Items")
 
-if len(st.session_state.cart) == 0:
+if not st.session_state.cart:
     st.write("Cart is empty")
 else:
     for item in st.session_state.cart:
@@ -33,10 +29,10 @@ product = st.text_input("Product Name")
 
 if st.button("Add to Cart"):
 
-    if product.strip() != "":
+    if product.strip():
         st.session_state.cart.append(product)
 
-        local_storage.setItem("cart", json.dumps(st.session_state.cart))
+        st.query_params["cart"] = json.dumps(st.session_state.cart)
 
         st.success("Item added")
 
@@ -47,7 +43,7 @@ if st.button("Clear Cart"):
 
     st.session_state.cart = []
 
-    local_storage.setItem("cart", json.dumps([]))
+    st.query_params["cart"] = json.dumps([])
 
     st.success("Cart cleared")
 
