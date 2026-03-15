@@ -33,6 +33,15 @@ z-index: 999;
     unsafe_allow_html=True,
 )
 
+
+def cart_total():
+    return sum(
+        item.get("total_price", 0)
+        for item in st.session_state.cart
+        if isinstance(item, dict)
+    )
+
+
 # ---------------- SESSION PAGE CONTROL ----------------
 if "page" not in st.session_state:
     st.session_state.page = "shop"
@@ -205,7 +214,7 @@ if st.session_state.page == "shop":
         del st.session_state.last_added
 
     # ---------- TOP CART BAR ----------
-    total = sum(item["total_price"] for item in st.session_state.cart)
+    total = cart_total()
 
     col1, col2, col3 = st.columns([4, 1.5, 1.5])
 
@@ -302,7 +311,7 @@ if st.session_state.page == "shop":
     #         st.rerun()
     if len(st.session_state.cart) > 0:
 
-        total = sum(item["total_price"] for item in st.session_state.cart)
+        total = cart_total()
 
         st.markdown(
             f"""
@@ -342,7 +351,7 @@ if st.session_state.page == "checkout":
     customer_name = st.text_input("Customer Name")
     customer_whatsapp = st.text_input("Customer WhatsApp Number")
 
-    total = sum(item["total_price"] for item in st.session_state.cart)
+    total = cart_total()
     st.subheader(f"Final Amount: ₹{total}")
 
     if st.button("✅ Place Order Now"):
