@@ -46,14 +46,17 @@ def cart_total():
 if "page" not in st.session_state:
     st.session_state.page = "shop"
 
+# Safety initialization for cart
+if "cart" not in st.session_state:
+    st.session_state.cart = []
+
 # ---------------- LOAD PRODUCTS ----------------
 with open("products.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 
 # ---------------- LOAD CART FROM QUERY PARAM ----------------
-# query_params = st.query_params
-query_params = dict(st.query_params)
+query_params = st.query_params
 
 if "cart" not in st.session_state:
 
@@ -311,18 +314,41 @@ if st.session_state.page == "shop":
     #     if st.button("🛒 Place Order"):
     #         st.session_state.page = "checkout"
     #         st.rerun()
+    # if len(st.session_state.cart) > 0:
+
+    #     total = cart_total()
+
+    #     st.markdown(
+    #         f"""
+    #         <div class="sticky-cart">
+    #             <a href="?page=checkout">
+    #                 <button style="
+    #                 background-color:#ff4b4b;
+    #                 color:white;
+    #                 padding:15px 25px;
+    #                 font-size:18px;
+    #                 border:none;
+    #                 border-radius:10px;
+    #                 cursor:pointer;">
+    #                 🛒 Checkout ₹{total}
+    #                 </button>
+    #             </a>
+    #         </div>
+    #         """,
+    #         unsafe_allow_html=True,
+    #     )
+
 if len(st.session_state.cart) > 0:
 
     total = cart_total()
 
     st.markdown('<div class="sticky-cart">', unsafe_allow_html=True)
 
-    if st.button(f"🛒 Checkout ₹{total}"):
+    if st.button(f"🛒 Checkout ₹{total}", key="checkout_btn"):
         st.session_state.page = "checkout"
         st.rerun()
 
     st.markdown("</div>", unsafe_allow_html=True)
-
 
 # ============================================================
 # ================= CHECKOUT PAGE ============================
