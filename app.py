@@ -364,6 +364,7 @@ if st.session_state.page == "checkout":
 
     if st.button("⬅ Back to Shop"):
         st.session_state.page = "shop"
+        st.query_params.clear()
         st.rerun()
 
     st.markdown("---")
