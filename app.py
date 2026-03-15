@@ -51,8 +51,52 @@ if "page" not in st.session_state:
 #     st.session_state.cart = []
 
 # ---------------- LOAD PRODUCTS ----------------
-with open("products.json", "r", encoding="utf-8") as f:
-    data = json.load(f)
+# with open("products.json", "r", encoding="utf-8") as f:
+#     data = json.load(f)
+
+# ---------------- LOAD PRODUCTS FROM GOOGLE SHEET ----------------
+
+
+@st.cache_data(ttl=60)
+def load_products():
+
+    sheet_url = "https://docs.google.com/spreadsheets/d/1UeAOfwUV7YkEGM-jQXNJZ8Nd3_nJGERUyqvlXWuRb50/export?format=csv"
+
+    df = pd.read_csv(sheet_url)
+
+    # Clean column names
+    df.columns = df.columns.str.strip().str.lower()
+
+    data = {}
+
+    grouped = df.groupby(["category", "subcategory", "name"])
+
+    for (cat, sub, name), group in grouped:
+
+        first = group.iloc[0]
+
+        prices = dict(zip(group["size"], group["price"]))
+
+        product = {
+            "id": int(first["id"]),
+            "name": name,
+            "image": first["image"],
+            "unit": int(first["unit"]),
+            "prices": prices,
+        }
+
+        if cat not in data:
+            data[cat] = {}
+
+        if sub not in data[cat]:
+            data[cat][sub] = []
+
+        data[cat][sub].append(product)
+
+    return data
+
+
+data = load_products()
 
 
 # ---------------- LOAD CART FROM QUERY PARAM ----------------
