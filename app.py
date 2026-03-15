@@ -6,16 +6,17 @@ st.title("Cart Demo")
 
 local_storage = LocalStorage()
 
-# ---------------- LOAD CART ----------------
+# ---------------- INIT CART ----------------
+if "cart" not in st.session_state:
+    st.session_state.cart = []
+
+# ---------------- LOAD CART FROM BROWSER ----------------
 saved_cart = local_storage.getItem("cart")
 
-if "cart" not in st.session_state:
-    if saved_cart:
-        try:
-            st.session_state.cart = json.loads(saved_cart)
-        except:
-            st.session_state.cart = []
-    else:
+if saved_cart and st.session_state.cart == []:
+    try:
+        st.session_state.cart = json.loads(saved_cart)
+    except:
         st.session_state.cart = []
 
 # ---------------- DISPLAY CART ----------------
