@@ -157,6 +157,46 @@ def add_to_cart(product_id, product_name, size, price, qty, image, unit):
     st.session_state.added_product = product_id
 
 
+def increase_qty(index):
+    item = st.session_state.cart[index]
+    unit = item["quantity"] // item["dozens"]
+
+    item["dozens"] += 1
+    item["quantity"] = item["dozens"] * unit
+    item["total_price"] = item["total_price"] / (item["dozens"] - 1) * item["dozens"]
+
+    st.session_state.cart[index] = item
+    st.query_params["cart"] = json.dumps(st.session_state.cart)
+    st.rerun()
+
+
+def decrease_qty(index):
+    item = st.session_state.cart[index]
+
+    if item["dozens"] > 1:
+        unit = item["quantity"] // item["dozens"]
+
+        item["dozens"] -= 1
+        item["quantity"] = item["dozens"] * unit
+        item["total_price"] = (
+            item["total_price"] / (item["dozens"] + 1) * item["dozens"]
+        )
+
+        st.session_state.cart[index] = item
+        st.query_params["cart"] = json.dumps(st.session_state.cart)
+
+    else:
+        remove_item(index)
+
+    st.rerun()
+
+
+def remove_item(index):
+    st.session_state.cart.pop(index)
+    st.query_params["cart"] = json.dumps(st.session_state.cart)
+    st.rerun()
+
+
 # ---------------- PDF GENERATION ----------------
 def generate_pdf(cart_items, total, name, whatsapp):
 
@@ -430,7 +470,7 @@ if st.session_state.page == "checkout":
 
         st.subheader("🛒 Order Summary")
 
-        for item in st.session_state.cart:
+        for i, item in enumerate(st.session_state.cart):
 
             col1, col2 = st.columns([1, 3])
 
@@ -439,13 +479,32 @@ if st.session_state.page == "checkout":
                     st.image(item["image"], width=120)
 
             with col2:
-                st.write(f"**Product:** {item['product']}")
+
                 pcs_price = item["total_price"] / item["quantity"]
 
+                st.write(f"**Product:** {item['product']}")
                 st.write(f"Size: {item['size']}")
                 st.write(f"Price per pcs: ₹{round(pcs_price,2)}")
-                st.write(f"Quantity: {item['dozens']} pack ({item['quantity']} pcs)")
-                st.write(f"Total: ₹{item['total_price']}")
+
+                colA, colB, colC, colD = st.columns([1,1,2,1])
+
+            with colA:
+                if st.button("➖", key=f"dec_{i}"):
+                decrease_qty(i)
+
+            with colB:
+                st.write(f"{item['dozens']} pack")
+
+            with colC:
+                if st.button("➕", key=f"inc_{i}"):
+                increase_qty(i)
+
+            with colD:
+                if st.button("🗑", key=f"del_{i}"):
+                remove_item(i)
+
+            st.write(f"Quantity: {item['quantity']} pcs")
+            st.write(f"Total: ₹{item['total_price']}")
 
             st.markdown("---")
 
