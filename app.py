@@ -340,7 +340,16 @@ if st.session_state.page == "shop":
                     )
 
                     unit = p.get("unit", 12)
-                    st.write(f"Total Price: ₹{price * unit * dozens}")
+
+                    # 👇 ADD THIS HERE
+                    per_piece_price = price
+                    pack_price = price * unit
+
+                    st.write(f"💰 Price per piece: ₹{per_piece_price}")
+                    st.write(f"📦 Minimum Packing: {unit} pcs")
+                    st.write(f"📦 Price per pack: ₹{pack_price}")
+
+                    st.write(f"🧾 Total Price: ₹{pack_price * dozens}")
 
                     if st.button("Add to Cart", key=f"add_{p['id']}_{idx}"):
                         unit = p.get("unit", 12)
@@ -431,8 +440,11 @@ if st.session_state.page == "checkout":
 
             with col2:
                 st.write(f"**Product:** {item['product']}")
+                pcs_price = item["total_price"] / item["quantity"]
+
                 st.write(f"Size: {item['size']}")
-                st.write(f"Quantity: {item['dozens']} dozen ({item['quantity']} pcs)")
+                st.write(f"Price per pcs: ₹{round(pcs_price,2)}")
+                st.write(f"Quantity: {item['dozens']} pack ({item['quantity']} pcs)")
                 st.write(f"Total: ₹{item['total_price']}")
 
             st.markdown("---")
