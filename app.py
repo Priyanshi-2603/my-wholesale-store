@@ -486,25 +486,25 @@ if st.session_state.page == "checkout":
                 st.write(f"Size: {item['size']}")
                 st.write(f"Price per pcs: ₹{round(pcs_price,2)}")
 
-                colA, colB, colC, colD = st.columns([1,1,2,1])
+                colA, colB, colC, colD = st.columns([1, 1, 2, 1])
 
-            with colA:
-                if st.button("➖", key=f"dec_{i}"):
-                decrease_qty(i)
+                with colA:
+                    if st.button("➖", key=f"dec_{i}"):
+                        decrease_qty(i)
 
-            with colB:
-                st.write(f"{item['dozens']} pack")
+                with colB:
+                    st.write(f"{item['dozens']} pack")
 
-            with colC:
-                if st.button("➕", key=f"inc_{i}"):
-                increase_qty(i)
+                with colC:
+                    if st.button("➕", key=f"inc_{i}"):
+                        increase_qty(i)
 
-            with colD:
-                if st.button("🗑", key=f"del_{i}"):
-                remove_item(i)
+                with colD:
+                    if st.button("🗑", key=f"del_{i}"):
+                        remove_item(i)
 
-            st.write(f"Quantity: {item['quantity']} pcs")
-            st.write(f"Total: ₹{item['total_price']}")
+                st.write(f"Quantity: {item['quantity']} pcs")
+                st.write(f"Total: ₹{item['total_price']}")
 
             st.markdown("---")
 
