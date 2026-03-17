@@ -15,6 +15,10 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import A4
 
+if st.button("🔄 Refresh Products"):
+    st.cache_data.clear()
+    st.rerun()
+
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
     page_title="Shri Girraj Mukut Shringar Kendra Mathura", layout="wide"
