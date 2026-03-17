@@ -67,6 +67,16 @@ def load_products():
 
     # Clean column names
     df.columns = df.columns.str.strip().str.lower()
+
+    # ✅ ADD FROM HERE
+    df["category"] = df["category"].str.strip().str.title()
+    df["subcategory"] = df["subcategory"].str.strip().str.title()
+    df["name"] = df["name"].str.strip()
+
+    df = df.fillna("")
+    df = df.drop_duplicates()
+    # ✅ TILL HERE
+
     df = df.sort_values(by="name")
     data = {}
 
