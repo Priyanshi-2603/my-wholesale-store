@@ -70,9 +70,7 @@ def load_products():
     df = df.sort_values(by="name")
     data = {}
 
-    grouped = df.groupby(
-        ["category", "subcategory", "name", "design", "image", "unit", "id"]
-    )
+    grouped = df.groupby(["category", "subcategory", "name", "image", "unit", "id"])
 
     for (cat, sub, name, image, unit, pid), group in grouped:
 
@@ -82,7 +80,7 @@ def load_products():
 
         product = {
             "id": int(first["id"]),
-            "name": f"{name} - {design}",
+            "name": name,
             "image": first["image"],
             "unit": int(first["unit"]),
             "prices": prices,
