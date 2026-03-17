@@ -80,20 +80,23 @@ def load_products():
     df = df.sort_values(by="name")
     data = {}
 
-    grouped = df.groupby(["category", "subcategory", "name", "image", "unit", "id"])
+    df["size"] = df["size"].astype(str).str.strip()
+    df["name"] = df["name"].str.strip()
 
-    for (cat, sub, name, image, unit, pid), group in grouped:
+    grouped = df.groupby(["id", "category", "subcategory", "image"])
+
+    for (pid, cat, sub, image), group in grouped:
 
         first = group.iloc[0]
 
         prices = dict(zip(group["size"], group["price"]))
 
         product = {
-            "id": int(first["id"]),
-            "name": name,
-            "image": first["image"],
+            "id": int(pid),
+            "name": first["name"],  # keep same product name
+            "image": image,
             "unit": int(first["unit"]),
-            "prices": prices,
+            "prices": prices,  # 👈 all sizes merged here
         }
 
         if cat not in data:
