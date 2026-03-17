@@ -58,7 +58,7 @@ if "page" not in st.session_state:
 # ---------------- LOAD PRODUCTS FROM GOOGLE SHEET ----------------
 
 
-@st.cache_data(ttl=60)
+@st.cache_data(ttl=3600)
 def load_products():
 
     sheet_url = "https://docs.google.com/spreadsheets/d/1UeAOfwUV7YkEGM-jQXNJZ8Nd3_nJGERUyqvlXWuRb50/export?format=csv"
