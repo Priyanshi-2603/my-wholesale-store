@@ -67,10 +67,12 @@ def load_products():
 
     # Clean column names
     df.columns = df.columns.str.strip().str.lower()
-
+    df = df.sort_values(by="name")
     data = {}
 
-    grouped = df.groupby(["category", "subcategory", "name", "image", "unit", "id"])
+    grouped = df.groupby(
+        ["category", "subcategory", "name", "design", "image", "unit", "id"]
+    )
 
     for (cat, sub, name, image, unit, pid), group in grouped:
 
@@ -80,7 +82,7 @@ def load_products():
 
         product = {
             "id": int(first["id"]),
-            "name": name,
+            "name": f"{name} - {design}",
             "image": first["image"],
             "unit": int(first["unit"]),
             "prices": prices,
@@ -346,7 +348,7 @@ if st.session_state.page == "shop":
     search = st.text_input("🔍 Search Product")
 
     for sub_name, products in products_by_sub.items():
-
+        products = sorted(products, key=lambda x: x["name"])
         st.markdown(f"### {sub_name}")
         cols = st.columns(2)
         idx = 0
